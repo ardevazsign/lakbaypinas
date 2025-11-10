@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LakbayPinas</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Contact section tool -->
+
+    <!-- <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: 'NRut7juPdXg5K47KU',
+        });
+      })();
+    </script>
+
+    <script src="./js/script01.js"></script> -->
+  </head>
+  <body>
+    <header>
+      <div id="menu-bar" class="fas fa-bars"></div>
+      <div class="logo-holder">
+        <div class="image-logo-hold">
+          <img
+            class="main-logo-pic"
+            src="./images/546613454_122116775816976810_3702264966324116540_n.jpg"
+            alt=""
+          />
+        </div>
+        <div class="inner-holder">
+          <a class="logo" href="">Lakbay Pinas</a>
+          <h4 class="logo-label">Travel & Tours</h4>
+        </div>
+      </div>
+      <nav class="navbar">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#book">Book</a>
+        <a class="nav-link" href="#packages">Packages</a>
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#review">Review</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user" id="login-btn"></i>
+      </div>
+
+      <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here..." />
+        <label for="search-bar" class="fas fa-search"></label>
+      </form>
+    </header>
+    <!-- Header section end here -->
+    <!-- Login form container -->
+    <div class="login-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+      <form action="">
+        <h3>Login</h3>
+        <input
+          type="email"
+          class="box"
+          placeholder="Enter your email here...."
+        />
+        <input
+          type="password"
+          class="box"
+          placeholder="Enter your email here...."
+        />
+        <input type="submit" value="login now" class="btn" />
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remebeer me</label>
+        <p>forgot password?<a href="">Click here</a></p>
+        <p>Don't have an account?<a href="">register now</a></p>
+      </form>
+    </div>
+    <!-- --------------------- -->
+    <!-- Home Section Start --->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>Find yourself in every new destination.</h3>
+        <p>The World is Waiting, Go Further. Do More.</p>
+        <a href="#" class="btn">discover more</a>
+      </div>
+      <div class="controls">
+        <span
+          class="vid-btn active"
+          data-src="images/ardevaz/video7.mp4 "
+          data-music="./images/music/Dancemonkeyowen2020.mp3"
+        >
+        </span>
+        <span
+          class="vid-btn"
+          data-src="images/ardevaz/video2.mp4"
+          data-music="./images/music/AIR SUPPLY - HAVING YOU NEAR ME.mp3"
+        ></span>
+        <span
+          class="vid-btn"
+          data-src="images/ardevaz/video1.mp4"
+          data-music="./images/music/Air Supply - All Out Of Love.mp3"
+        ></span>
+        <span
+          class="vid-btn"
+          data-src="images/ardevaz/video8.mp4"
+          data-music="./images/music/Baby I Love Your Way - Bob Marley.mp3"
+        ></span>
+        <span
+          class="vid-btn"
+          data-src=" images/ardevaz/video10.mp4"
+          data-music="./images/music/just_once_x_cover_by_justin_vasquez_mp3_29151.mp3"
+        ></span>
+      </div>
+      <div class="video-container">
+        <video
+          class="myVideo"
+          src="images/ardevaz/video9.mp4"
+          id="video-slider"
+          loop
+          autoplay
+          muted
+        ></video>
+      </div>
+      <div class="music-holder">
+        <audio
+          id="myMusic"
+          src="./images/music/Dancemonkeyowen2020.mp3"
+        ></audio>
+      </div>
+    </section>
+
+    <!-------------  ------------------------------------------- -->
+
+    <!-- Home section End ----->
+    <!--Book section  Start  here -->
+    <section class="book" id="book">
+      <h1 class="heading">
+        <span>b</span>
+        <span>o</span>
+        <span>o</span>
+        <span>k</span>
+        <span class="space"></span>
+        <span>n</span>
+        <span>o</span>
+        <span>w</span>
+      </h1>
+
+      <div class="row">
+        <div class="image">
+          <img class="main-image" src="images/ardevaz/header.png" alt="" />
+        </div>
+
+        <form action="">
+          <div class="inputBox">
+            <h3>where to</h3>
+            <input type="text" placeholder="place name" />
+          </div>
+          <div class="inputBox">
+            <h3>how many</h3>
+            <input type="number" placeholder="number of guests" />
+          </div>
+          <div class="inputBox">
+            <h3>arrivals</h3>
+            <input type="date" />
+          </div>
+          <div class="inputBox">
+            <h3>leaving</h3>
+            <input type="date" />
+          </div>
+          <input type="submit" class="btn" value="book now" />
+        </form>
+      </div>
+    </section>
+    <!-- book section End here -->
+    <!-- Packages Section Starts -->
+    <section class="packages" id="packages">
+      <h1 class="heading">
+        <span>p</span>
+        <span>a</span>
+        <span>c</span>
+        <span>k</span>
+        <span>a</span>
+        <span>g</span>
+        <span>e</span>
+        <span>s</span>
+      </h1>
+      <div class="box-container">
+        <!-- 1 -->
+        <div class="box">
+          <img
+            class="packages-img"
+            src="./images/packages/danang4.png"
+            alt=""
+          />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>Danang Vietnam</h3>
+            <p class="para-package">
+              4D3N PHP 8,499 Per Person <br />
+              Land Arrangement Only (NO AIRFARE) <br />
+              INCLUSIONS: <br />
+              ☑️Hotel Accommodation Based on TWIN/TRIPLE Sharing @Dong Duong
+              Hotel and Suite or Similar <br />
+              ☑️Round Trip Danang International Airport Transfer with Driver
+              Only <br />
+              ☑️Daily Breakfast Inside Hotel Starting Day 2 <br />
+              📌REMARKS & EXCLUSION: <br />
+              -Minimum of 2 persons <br />
+              -Optional Tour Rates Are Available On Request <br />
+              -Rates Not Valid on Peak Period <br />
+              -Rates are Subject to Change without prior notice <br />
+              -Package is Non–Rebookable, Non-Transferrable, Non-Endorsable, and
+              Non-Refundable <br />
+              -Admission ticket to 3D Museum – USD 7/pax (not included) <br />
+              -Tips for tour guide and driver: minimum $5/pax <br />
+              -Travel Insurance <br />
+              -Bana Hills Wax Museum <br />
+              -Debay Wine Cellar <br />
+              -Alpine Coaster <br />
+              -Tip for Boat Man <br />
+              -Tip for Cyclo Driver <br />
+              -All things not mentioned above <br />
+              For Inquiries and Reservations Kindly message us at: <br />
+              Globe - 09167522487 <br />
+              Smart- 09499897478<br />
+              DAY 1: ARRIVAL.FREE TIME <br />
+              DAY 2: BREAKFAST.FREE TIME <br />
+              DAY 3: BREAKFAST.FREE TIME <br />
+              DAY 4: BREAKFAST.DEPARTURE <br />
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP 8,499.00 <span>PHP 9,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="box">
+          <img class="packages-img" src="images/packages/hanoi4.png" alt="" />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>HANOI VIETNAM</h3>
+            <p class="para-package">
+              4D3N PHP 11,899 Per Person <br />
+              Land Arrangement Only (NO AIRFARE) <br />
+              INCLUSIONS: <br />
+              ☑️Hotel Accommodation Based on TWIN/TRIPLE Sharing @Thang Long
+              Espana or First Eden <br />
+              ☑️Round Trip Hanoi Airport Transfer with Driver Only <br />
+              ☑️Daily Breakfast Inside Hotel Starting Day 2 <br />
+              📌REMARKS: <br />
+              -Minimum of 2 persons <br />
+              -Optional Tour Rates Are Available On Request <br />
+              -Rates Not Valid on Peak Period <br />
+              -Rates are Subject to Change without prior notice <br />
+              -Package is Non–Rebookable, Non-Transferrable, Non-Endorsable, and
+              Non-Refundable <br />
+              For Inquiries and Reservations Kindly message us at: <br />
+              Globe - 09167522487 <br />
+              Smart- 09499897478 <br />
+              ITINERARY <br />
+              DAY 1: ARRIVAL.FREE TIME <br />
+              DAY 2: BREAKFAST.FREE TIME <br />
+              DAY 3: BREAKFAST.FREE TIME <br />
+              DAY 4: BREAKFAST.DEPARTURE <br />
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP 11,899.00 <span>PHP 13,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="box">
+          <img class="packages-img" src="./images/packages/macau4.png" alt="" />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>MACAU</h3>
+            <p class="para-package">
+              4D3N PHP 27,899 Per Person <br />
+              Land Arrangement Only (No Airfare) <br />
+              📌INCLUSIONS: <br />
+              ☑️Hotel Accommodation Based on Twin/Triple Sharing @Regency Art
+              Hotel <br />
+              ☑️Round Trip Macau Airport Transfers <br />
+              ☑️Daily Breakfast Inside Hotel Starting Day 2 <br />
+              📌REMARKS <br />
+              -Minimum of 2 persons <br />
+              -Any un-utilized Service is Non-Refundable. All Transfers & Tours
+              are on Seat in Coach Basis. <br />
+              -Compulsory tipping at USD7 or HKD50 per pax(Pay on spot). <br />
+              -All rates are subject to change without prior notice. <br />
+              -Surcharge for foreign passport holders – 30/pax <br />
+              -Surcharge for students group or religious group is 30/pax <br />
+              -Package offer cannot be used in conjunction with any other offers
+              /discounts and /or promotions <br />
+              -For any flight change without 24 hrs notice given, an additional
+              charge of 15/pax will be applied for the re- arrangement of SIC
+              transfer <br />
+              -Free Airport Transfer is from 0800-1800 Hrs Only <br />
+              -Tour Handler, Hotel and Airline Will Not Be Liable For Any Delays
+              or Failure to Provide Services Caused by Act of Nature Or Other
+              Causes Beyond Our Control <br />
+              For Inquiries and Reservations Kindly message us at: <br />
+              Globe-09167522487 <br />
+              Smart-09499897478 <br />
+              ITINERARY <br />
+              DAY 1: ARRIVAL.FREE TIME <br />
+              DAY 2: -BREAKFAST <br />
+              -FREE TIME <br />
+              DAY 3: BREAKFAST.FREE TIME <br />
+              DAY 4: BREAKFAST.DEPARTURE <br />
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP27,899.00 <span>PHP 29,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="box hidden">
+          <img
+            class="packages-img"
+            src="images/packages/hongkong4.png"
+            alt=""
+          />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>Thailand</h3>
+            <p class="para-package">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non ex
+              repellendus harum corrupti, error eius iure alias excepturi dolore
+              quam sit numquam quae mollitia distinctio consequatur fugiat
+              eligendi ipsum reiciendis.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="box hidden">
+          <img
+            class="packages-img"
+            src="images/packages/phuketthaland4.png"
+            alt=""
+          />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>Thailand</h3>
+            <p class="para-package">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non ex
+              repellendus harum corrupti, error eius iure alias excepturi dolore
+              quam sit numquam quae mollitia distinctio consequatur fugiat
+              eligendi ipsum reiciendis.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+        <!-- 6 -->
+        <div class="box hidden">
+          <img
+            class="packages-img"
+            src="images/packages/bangkokthailand3.png"
+            alt=""
+          />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>Thailand</h3>
+            <p class="para-package">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non ex
+              repellendus harum corrupti, error eius iure alias excepturi dolore
+              quam sit numquam quae mollitia distinctio consequatur fugiat
+              eligendi ipsum reiciendis.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+        <!-- 7 -->
+        <div class="box hidden">
+          <img
+            class="packages-img"
+            src="images/packages/bangkokthailand3.png"
+            alt=""
+          />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>Thailand</h3>
+            <p class="para-package">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non ex
+              repellendus harum corrupti, error eius iure alias excepturi dolore
+              quam sit numquam quae mollitia distinctio consequatur fugiat
+              eligendi ipsum reiciendis.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+        <!-- 8 -->
+        <div class="box hidden">
+          <img
+            class="packages-img"
+            src="images/packages/bangkokthailand3.png"
+            alt=""
+          />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>Thailand</h3>
+            <p class="para-package">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non ex
+              repellendus harum corrupti, error eius iure alias excepturi dolore
+              quam sit numquam quae mollitia distinctio consequatur fugiat
+              eligendi ipsum reiciendis.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+        <!-- 9 -->
+        <div class="box hidden">
+          <img
+            class="packages-img"
+            src="images/packages/bangkokthailand3.png"
+            alt=""
+          />
+          <div class="card-body">
+            <h3><i class="fas fa-map-marker-alt"></i>Thailand</h3>
+            <p class="para-package">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non ex
+              repellendus harum corrupti, error eius iure alias excepturi dolore
+              quam sit numquam quae mollitia distinctio consequatur fugiat
+              eligendi ipsum reiciendis.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
+            <a href="#" class="btn packages-btn">book now</a>
+          </div>
+        </div>
+      </div>
+      <div class="morePackage-holder">
+        <button id="btnForMore" class="btnForMore">More Package</button>
+      </div>
+    </section>
+    <!-- Packages Section End Here -->
+    <!-- Services Section stars -->
+    <section class="services" id="services">
+      <h1 class="heading">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+      </h1>
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-hotel"></i>
+          <h3>affordable hotels</h3>
+          <p>
+            "Your comfort is always part of the journey. We carefully choose
+            hotels that offer the perfect balance of affordability, quality, and
+            convenience. Each accommodation we partner with provides modern
+            facilities, clean and cozy rooms, and excellent customer service to
+            make you feel at home wherever you stay. Whether you’re traveling
+            for adventure or relaxation, we make sure your stay is safe,
+            comfortable, and truly enjoyable — because you deserve the best rest
+            after every great experience."
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-utensils"></i>
+          <h3>food and drinks</h3>
+          <p>
+            "We believe that every great journey is complete with unforgettable
+            flavors. That’s why we make sure our clients enjoy the best food and
+            drinks each destination has to offer. From local delicacies to
+            world-famous cuisines, every meal is thoughtfully selected to give
+            you a true taste of culture and tradition. Whether you’re dining by
+            the beach, in the mountains, or in the heart of the city, we ensure
+            every bite adds to your travel experience. With us, your adventure
+            doesn’t just take you places — it delights your taste buds too!"
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-bullhorn"></i>
+          <h3>safety guide</h3>
+          <p>
+            "Your safety is our top priority. We take every step to ensure your
+            journey is secure, from the moment you book with us to the time you
+            arrive back home. Our website uses trusted and protected systems to
+            keep your personal and payment information safe. We also work
+            closely with verified partners, licensed operators, and certified
+            guides to guarantee that every trip meets the highest safety
+            standards. With us, you can travel confidently knowing that your
+            comfort, security, and peace of mind always come first."
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-globe-asia"></i>
+          <h3>around the world</h3>
+          <p>
+            " We believe the world is meant to be explored — and we’re here to
+            make every journey extraordinary. Our ‘Around the World’ service is
+            designed to take you beyond expectations, bringing you closer to the
+            beauty, culture, and adventure each destination has to offer.
+            Whether it’s a peaceful escape or a thrilling exploration, we cater
+            to every traveler’s dream with care, speed, and reliability. With
+            us, you don’t just travel — you experience the world in ways you’ll
+            never forget."
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-plane"></i>
+          <h3>fastest travel</h3>
+          <p>
+            " Your journey begins the moment you reach out to us. We take pride
+            in offering a fast, smooth, and worry-free booking experience —
+            because we know your time and comfort matter. Our team works
+            efficiently to process your travel plans in just a few clicks,
+            ensuring everything is ready before you even pack your bags. With
+            our trusted service, you can travel with confidence knowing that
+            your safety, convenience, and satisfaction are always our top
+            priority. Let’s make your next adventure hassle-free and
+            unforgettable!"
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-hiking"></i>
+          <h3>adventure</h3>
+          <p>
+            " we don’t just take you places — we bring your dream adventures to
+            life. Every destination we offer is carefully prepared to give you
+            more than just travel — it’s a journey filled with excitement,
+            discovery, and unforgettable memories. From breathtaking sights to
+            thrilling experiences, we make sure every moment is worth it. Our
+            goal is to exceed your expectations and give you the kind of
+            adventure you’ll talk about for years. So get ready — your best
+            adventure starts with us!"
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End  -->
+    <!-- gallery section starts -->
+    <section class="gallery" id="gallery">
+      <h1 class="heading">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+        <span class="space"></span>
+        <span>p</span>
+        <span>a</span>
+        <span>c</span>
+        <span>k</span>
+        <span>a</span>
+        <span>g</span>
+        <span>e</span>
+        <span>s</span>
+      </h1>
+      <div class="box-container">
+        <div class="box">
+          <img
+            class="gallery-image"
+            src="./images/packages/cagayandeoro4.png"
+            alt=""
+          />
+          <div class="content">
+            <h3>CAGAYAN DE ORO</h3>
+            <p>
+              4D3N Php 6,759 Per Person <br />
+              LAND ARRANGEMENT ONLY (No Airfare) <br />
+              📌INCLUSIONS: <br />
+              ☑️Hotel Accommodation Based on Twin/Triple Sharing @Marianne Hotel
+              and Suites or Similar <br />
+              ☑️Round Trip Laguindingan Airport transfer based on Airport
+              Shuttle (shared) -Private transfer Add 1500/pax RoundTrip *Please
+              Note That Airport Shuttle Stops In Many Hotels and May Take Time
+              Before Reaching Your Hotel <br />
+              ☑️Daily Set Breakfast Inside the Hotel Starting Day 2
+              <br />
+              ☑️Cagayan De Oro Half Day Tour
+              <br />
+              📌Cagayan De Oro Half Day Tour Highlights: <br />
+              -Plaza Divisoria -St.Augustine Metropolitan Cathedral <br />
+              -Gaston Park <br />
+              -Cogon Market -Lim Ketkai Center <br />
+              -Gen. Mc Arthur Marker and City Museum or La Castilla Museum
+              <br />
+              Itinerary <br />
+              Day 1. Arrival at Laguindingan International Airport. Meet and
+              Transfer to the hotel <br />
+              Day 2. Breakfast. Proceed to CDO Half Day City Tour <br />
+              Day 3. Breakfast. Free Time or Avail Optional Tour <br />
+              Day 4. Departure
+              <br />
+              📌REMARKS <br />
+              -Minimum of 2 Person <br />
+              -Optional Tour Rates Are Available On Request <br />
+              -Rates are not applicable on peak period <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable <br />
+              -This quotation is for 2 persons. For 3 or more persons, a new
+              quotation will be given upon request. <br />
+              For more inquiries and reservations:<br />
+              Kindly Message us at <br />
+              Globe: 09167522487 <br />
+              Smart: 09499897478
+            </p>
+
+            <a
+              href="https://www.facebook.com/reel/805331748812739"
+              target="_self"
+              class="btn"
+              >see more</a
+            >
+          </div>
+        </div>
+        <div class="box">
+          <img class="gallery-image" src="./images/packages/cebu4.png" alt="" />
+          <div class="content">
+            <h3>CEBU</h3>
+            <p>
+              4D3N Php 7,999 Per Person <br />
+              LAND ARRANGEMENT ONLY (No Airfare) 📌INCLUSIONS: <br />
+              ☑️Hotel Accommodation Based on Twin/Triple Sharing @Hammerson
+              Hotel or Similar <br />
+              ☑️Round Trip Cebu Airport Private Transfers <br />
+              ☑️Daily Set Breakfast Inside Hotel Starting Day 2 <br />
+              ☑️Cebu City Tour + Mountain Tour <br />
+              📌Cebu City Tour Highlights: <br />
+              - Fort San Pedro <br />
+              - Basilica Minore Del Sto. Niño <br />
+              - Magellan’s Cross <br />
+              - Heritage of Cebu Monument <br />
+              - Yap San Diego Ancestral House <br />
+              - Running Tour of Colon Street (oldest national road in Ph) <br />
+              - Fuente Osmeña Circle <br />
+              - Capitol Site <br />
+              - Taoist Temple <br />
+              - Sirao Flower Farm <br />
+              - Temple of Leah <br />
+              - La Vie in the Sky or Sachikos Little Kyoto <br />
+              Itinerary <br />
+              Day 1. Arrival at Cebu-Mactan Airport. Meet and Transfer to the
+              hotel <br />
+              Day 2. Breakfast. Proceed to Cebu City Tour + Mountain Tour <br />
+              Day 3. Breakfast. Free Time or Avail Optional Tour <br />
+              Day 4. Breakfast. Departure <br />
+              📌REMARKS <br />
+              -Minimum of 2 Persons <br />
+              -Rates are not Valid on Peak Periods <br />
+              -Optional Tours Rates Are Available On Request <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable <br />
+              -This quotation is for 2 persons. For 3 or more persons, a new
+              quotation will be given upon request. <br />
+              For more inquiries and reservations: <br />
+              Kindly Message us at <br />
+              Globe:09167522487 <br />
+              Smart: 09499897478
+            </p>
+            <a
+              href="https://www.facebook.com/globalpinoytravel/videos/24718374137781866"
+              target="_self"
+              class="btn"
+              >see more</a
+            >
+          </div>
+        </div>
+        <div class="box">
+          <img
+            class="gallery-image"
+            src="./images/packages/coron4.png"
+            alt=""
+          />
+          <div class="content">
+            <h3>CORON</h3>
+            <p>
+              4D3N Php 8,099 Per Person <br />
+              LAND ARRANGEMENT ONLY (NO AIRFARE) <br />
+              📌INCLUSIONS <br />
+              ☑️Hotel Accommodation @Aquilah Homestay Inn or Similar <br />
+              ☑️Round trip shared airport transfer (usu-cor-usu) <br />
+              ☑️Complimentary breakfast at accommodation starting day 2 <br />
+              ☑️Coron Island Tour A [joiners] Kayangan Lake, Quin Reef, CYC
+              Beach, Coral Garden, Green Lagoon <br />
+              ☑️Coron Town Tour A [joiners] Maquinit Hot Spring, Mt. Tapyas view
+              deck (Trekking 721 steps) , Souvenir Shop, Baywalk, Town Market,
+              Public Market, Harbour Center, St. Augustine Church <br />
+              ☑️Culion Escapade Island Tour [joiners] Malcapuya Island, Bulog
+              Dos, Banana Island <br />
+              ☑️Environmental fees and Lagoon entrance fees <br />
+              ☑️Licensed driver and DOT Accredited guide <br />
+              ❌EXCLUSION <br />
+              -Kayak, Snorkel Gear & Aqua shoes [during island hopping tour]
+              <br />
+              -Complimentary Tipping for the guide and driver <br />
+              -Anything that is not specifically mentioned in the package is on
+              pax account <br />
+              Itinerary <br />
+              Day 1. Arrival|Coron town tour <br />
+              Day 2. Breakfast. Proceed to Coron Island Tour A <br />
+              Day 3. Breakfast. Proceed to Culion Escapade Island Tour <br />
+              Day 4. Departure <br />
+              📌REMARKS <br />
+              -Minimum of 2 Persons <br />
+              -Rates are not Valid on Peak Periods <br />
+              -Optional Tours Rates Are Available On Request <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable <br />
+              For more inquiries and reservations <br />
+              Kindly Message us at: <br />
+              Globe 09167522487 <br />
+              Smart 09499897478 <br />
+            </p>
+            <a
+              href="https://www.facebook.com/reel/810639551835277"
+              target="_self"
+              class="btn"
+              >see more</a
+            >
+          </div>
+        </div>
+        <div class="box hide-gallery">
+          <img
+            class="gallery-image"
+            src="./images/packages/davao4-2.png"
+            alt=""
+          />
+          <div class="content">
+            <h3>davao</h3>
+            <p>
+              4D3N Php 7,359 Per Person <br />
+              LAND ARRANGEMENT ONLY (No Airfare) 📌INCLUSIONS <br />
+              ☑️Hotel Accommodation Twin/Triple Sharing @Davao Royal Suites and
+              Residences OR Similar ☑️Round Trip Davao Airport Private Transfers
+              <br />
+              ☑️Daily Breakfast Inside Hotel Starting day 2 <br />
+              ☑️Davao City Tour <br />
+              📌Davao City Tour Highlights: <br />
+              -Statue of David <br />
+              -Shrine of the Holy Infant Jesus <br />
+              -Durian Factory <br />
+              -San Pedro Cathedral <br />
+              -Davao Fruit Stand <br />
+              -San Pedro Square <br />
+              -Duterte's Ancesral House (if available) <br />
+              -Ampatuan Mansion and Running Tour of City Hall and 911 Public
+              Safety and Security Office (only 3 in the world) <br />
+              Itinerary <br />
+              Day 1. Arrival at Davao Airport. Meet and Transfer to the hotel
+              <br />
+              Day 2. Breakfast. Proceed to Davao City Tour <br />
+              Day 3. Breakfast. Free Time or Avail Optional Tour <br />
+              Day 4. Departure <br />
+              📌REMARKS <br />
+              -Minimum of 2 Persons <br />
+              -Optional Tour Rates Are Available On Request <br />
+              -Rates are not applicable on peak period <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable <br />
+              -This quotation is for 2 persons. For 3 or more persons, a new
+              quotation will be given upon request. <br />
+              For more inquiries and reservations <br />
+              Kindly Message us at <br />
+              Globe 09167522487 <br />
+              Smart 09499897478 <br />
+            </p>
+            <a
+              href="https://www.facebook.com/reel/2062610637606543"
+              target="_self"
+              class="btn"
+              >see more</a
+            >
+          </div>
+        </div>
+        <div class="box hide-gallery">
+          <img
+            class="gallery-image"
+            src="./images/packages/puerto4.png"
+            alt=""
+          />
+          <div class="content">
+            <h3>puerto princesa</h3>
+            <p>
+              4D3N Php 8,699 Per Person <br />
+              LAND ARRANGEMENT ONLY (NO AIRFARE) <br />
+              📌INCLUSIONS <br />
+              ☑️Hotel Accommodation @Palawan Uno Hotel or Similar <br />
+              ☑️Round Trip Shared Airport Transfers [pps-hotel-pps] <br />
+              ☑️Complimentary Breakfast at the accommodation starting day 2
+              <br />
+              ☑️PPS Half day City Tour with light snacks [joiners] <br />
+              ☑️Underground River Tour [joiners] <br />
+              ☑️Honda Bay Island Hopping Tour with picnic lunch [joiners] <br />
+              ☑️Environmental fees and Lagoon entrance fees <br />
+              ☑️Licensed driver and DOT Accredited guide <br />
+              ❌EXCLUSIONS <br />
+              -Kayak, Snorkel Gear & Aqua Shoes [during island hopping tour]
+              <br />
+              -Complimentary Tipping for the guide and driver <br />
+              -Anything that is not specifically mentioned in the package is on
+              pax account <br />
+              Itinerary: <br />
+              Day1-Arrival|PM Halfday City Tour <br />
+              Day2-Underground River Tour <br />
+              Day3-HondaBay Island Tour <br />
+              Day4-Departure <br />
+              📌REMARKS <br />
+              -Minimum of 2 Persons <br />
+              -Rates are not Valid on Peak Periods <br />
+              -Optional Tours Rates Are Available On Request <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable <br />
+              For more inquiries and reservations <br />
+              Kindly message us at: <br />
+              Globe -09167522487 <br />
+              Smart -09499897478<br />
+            </p>
+            <a href="#" class="btn">see more</a>
+          </div>
+        </div>
+        <div class="box hide-gallery">
+          <img
+            class="gallery-image"
+            src="images/packages/buracay4.png"
+            alt=""
+          />
+          <div class="content">
+            <h3>BORACAY</h3>
+            <p>
+              4D3N Php 6,499 Per Person <br />
+              LAND ARRANGEMENT ONLY (No Airfare) <br />
+              📌INCLUSIONS: <br />
+              ☑️Hotel Accommodation Based on Twin/Triple Sharing @La Carmela De
+              Boracay Station 2 Beachfront or Similar Hotel <br />
+              ☑️Round Trip Caticlan Airport Transfer on Seat in Coach (Shared
+              Transfers) if via Kalibo Airport Add 350/pax Roundtrip <br />
+              ☑️Daily Buffet Breakfast Inside Hotel Starting Day 2 <br />
+              ☑️Terminal Fee (add Php 150/Pax for foreign passport holders)
+              <br />
+              ☑️Environmental Fee <br />
+              Itinerary: <br />
+              Day 1. Arrival at Caticlan Airport. Meet and Transfer to the hotel
+              <br />
+              Day 2. Breakfast. Free Time or Avail Optional Tour <br />
+              Day 3. Breakfast. Free Time or Avail Optional Tour <br />
+              Day 4. Departure <br />
+              📌REMARKS <br />
+              -Minimum of 2 Persons <br />
+              -Rates are not Valid on Peak Periods <br />
+              -Optional Tour Rates Are Available On Request <br />
+              -Rates are not applicable on peak period <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable & Non-Endorsable <br />
+              For more inquiries and reservations <br />
+              Kindly Message us at <br />
+              Globe -09167522487 <br />
+              Smart -09499897478 <br />
+            </p>
+            <a
+              href="https://www.facebook.com/reel/1525367771927410"
+              target="_self"
+              class="btn"
+              >see more</a
+            >
+          </div>
+        </div>
+        <div class="box hide-gallery">
+          <img class="gallery-image" src="images/packages/bohol4.png" alt="" />
+          <div class="content">
+            <h3>BOHOL</h3>
+            <p>
+              4D3N Php 11,099 Per Person <br />
+              LAND ARRANGEMENT ONLY (No Airfare) <br />
+              📌INCLUSIONS: <br />
+              ☑️Hotel Accommodation Based on Twin/Triple Sharing @Harmony Hotel
+              or Similar <br />
+              ☑️Round Trip Bohol Airport Private Transfers if via Tagbilaran
+              Seaport Add 300/pax <br />
+              ☑️Daily Breakfast Inside Hotel Day 2 <br />
+              ☑️Bohol Countryside Tour + Shared Loboc River Cruise with Buffet
+              Lunch <br />
+              ☑️Panglao Island Hopping + Dolphin Watching <br />
+              📌Countryside Tour Highlights: <br />
+              -Chocolate Hills Complex <br />
+              -Butterfly Farm and Python Snake <br />
+              -Tarsier <br />
+              -Bohol Bee Farm <br />
+              -Baclayon Church <br />
+              -Blood Compact <br />
+              -Manmade Forest <br />
+              -Souvenir Shop <br />
+              Itinerary <br />
+              Day 1. Arrival at Panglao Airport. Meet and Transfer to the hotel
+              <br />
+              Day 2. Breakfast. Proceed to Countryside Tour + Loboc River Cruise
+              <br />
+              Day 3. Breakfast. Proceed to Panglao Island Hopping <br />
+              Day 4. Breakfast. Departure <br />
+              📌Panglao Island Hopping Highlights: <br />
+              -Balicasag and Virgin Island <br />
+              -Dolphin Watching (Depends on Weather) <br />
+              -Fish Sanctuary and Turtles <br />
+              📌REMARKS <br />
+              -Minimum of 2 Persons <br />
+              -Rates are not Valid on Peak <br />Periods <br />
+              -Optional Tours Rates Are Available On Request <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable <br />
+              -This quotation is for 2 persons. For 3 or more persons, a new
+              quotation will be given upon <br />request. <br />
+              For more inquiries and reservations <br />
+              Kindly Message us at <br />
+              Globe -09167522487 <br />
+              Smart -09499897478 <br />
+            </p>
+            <a
+              href="https://www.facebook.com/reel/794359480190097"
+              target="_self"
+              class="btn"
+              >see more</a
+            >
+          </div>
+        </div>
+        <div class="box hide-gallery">
+          <img class="gallery-image" src="images/packages/elnido4.png" alt="" />
+          <div class="content">
+            <h3>EL NIDO</h3>
+            <p>
+              4D3N Php 6,799 Per Person <br />
+              LAND ARRANGEMENT ONLY (NO AIRFARE) <br />
+              📌INCLUSIONS <br />
+              ☑️Room Accommodation @Nook El Nido Homestay or Similar <br />
+              ☑️Complimentary breakfast at the Accommodation starting day 2
+              <br />
+              ☑️Round Trip Shared Transfer [pps-el nido-pps] <br />
+              ☑️El Nido Island Tour A with picnic lunch: Big lagoon, Shimizu
+              Island, Payong Payong island, Secret lagoon, 7 Commando Beach
+              <br />
+              ☑️El Nido Island Tour C with picnic lunch: Helicopter island,
+              Secret Beach, Matinloc Shrine, Star Beach, Hidden Beach <br />
+              ☑️Environmental fees and Lagoon entrance fees <br />
+              ☑️Licensed driver and DOT Accredited guide <br />
+              ❌EXCLUSIONS <br />
+              -Kayak, Snorkel Gear, and Aqua shoes [during island hopping tour]
+              <br />
+              -Complimentary Tipping for the guide and driver <br />
+              -Anything that is not specifically mentioned in the package is on
+              pax account <br />
+              Suggested itinerary: <br />
+              Day 1 - Arrival | Transfer to El Nido <br />
+              Day 2 - El Nido Island Tour A <br />
+              Day 3 - El Nido Island Tour C <br />
+              Day 4 - Check - out | Travel back to PPS <br />
+              📌REMARKS <br />
+              -Minimum of 2 Persons <br />
+              -Rates are not Valid on Peak Periods <br />
+              -Optional Tours Rates Are Available On Request <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable <br />
+              For more inquiries and reservations <br />
+              Kindly message us at: <br />
+              Globe -09167522487 <br />
+              Smart -09499897478 <br />
+            </p>
+            <a
+              href="https://www.facebook.com/reel/1578174806496640"
+              target="_self"
+              class="btn"
+              >see more</a
+            >
+          </div>
+        </div>
+        <div class="box hide-gallery">
+          <img
+            class="gallery-image"
+            src="images/packages/siargao3-2.png"
+            alt=""
+          />
+          <div class="content">
+            <h3>SIARGAO</h3>
+            <p>
+              3D2N Php 8,599 Per Person <br />
+              LAND ARRANGEMENT ONLY (No Airfare) <br />
+              📌INCLUSIONS: <br />
+              ☑️Hotel Accommodation Based on Twin/Triple Sharing @Ocean 101 or
+              Similar <br />
+              ☑️Daily Breakfast Inside Hotel Starting Day 2 <br />
+              ☑️Round Trip Private Siargao Airport Transfers <br />
+              ☑️Island Hopping <br />
+              🏝 Island Hopping Tour Highlights: <br />
+              Daku Island <br />
+              Guyam Island <br />
+              Naked Island <br />
+              Itinerary: <br />
+              Day 1. Arrival at Siargao Airport. Meet and Transfer to the hotel
+              <br />
+              Day 2. Breakfast. Free Time or Avail Optional Tour <br />
+              Day 3. Departure <br />
+              📌REMARKS <br />
+              -Minimum of 2 Persons <br />
+              -Rates are not Valid on Peak Periods <br />
+              -Optional Tours Rates Are Available On Request <br />
+              -Rates are subject to change without prior notice <br />
+              -Once Paid/Finalized, the Package is Non-Refundable,
+              Non-Rebookable, Non-Transferrable <br />
+              -This quotation is for 2 persons. For 3 or more persons, a new
+              quotation will be given upon <br />
+              request. <br />
+              For more inquiries and reservations <br />
+              Kindly Message us at <br />
+              Globe -0956-7162892 <br />
+              Smart -0998-4289894 <br />
+            </p>
+            <a
+              href="https://www.facebook.com/reel/802836252336607"
+              target="_self"
+              class="btn"
+              >see more</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="morePackage-holder">
+        <button id="moreGallery" class="moreGallery">More Package</button>
+      </div>
+    </section>
+    <!-- Gallery Section End -->
+    <!-- Review Section Starts -->
+    <section class="review" id="review">
+      <h1 class="heading">
+        <span>r</span>
+        <span>e</span>
+        <span>v</span>
+        <span>i</span>
+        <span>e</span>
+        <span>w</span>
+      </h1>
+      <div class="swiper-container review-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="box">
+              <img src="/images/profile _pic 104.jpeg" alt="" />
+              <h3>Owen Saavedra</h3>
+              <p>The developer owner of this website</p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <img src="/images/FB_IMG_1755495886328.jpg" alt="" />
+              <h3>Owen Saavedra</h3>
+              <p>The developer owner of this website</p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <img src="/images/profile _pic 104.jpeg" alt="" />
+              <h3>Owen Saavedra</h3>
+              <p>The developer owner of this website</p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <img src="/images/FB_IMG_1755495890325.jpg" alt="" />
+              <h3>Owen Saavedra</h3>
+              <p>The developer owner of this website</p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="box">
+              <img src="/images/download (1) - Copy.jpg" alt="" />
+              <h3>Owen Saavedra</h3>
+              <p>The developer owner of this website</p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Review Section End -->
+    <!-- Contact Section Starts -->
+    <section class="contact" id="contact">
+      <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+      </h1>
+      <div class="row">
+        <div class="image">
+          <img
+            src="./images/546613454_122116775816976810_3702264966324116540_n.jpg"
+            alt=""
+          />
+        </div>
+
+        <form action="https://formspree.io/f/xovkowdb" method="POST">
+          <div class="inputBox">
+            <input type="name" id="name" placeholder="name" required />
+            <input type="email" id="email" placeholder="email" required />
+          </div>
+          <div class="inputBox">
+            <label for=""></label>
+            <input type="number" id="phone" placeholder="number" required />
+            <input type="subject" id="subject" placeholder="subject" required />
+          </div>
+          <textarea
+            placeholder="how can we helpn you?"
+            name=""
+            id="message"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <input type="submit" class="btn" value="send message" />
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+    <!-- Brand section Starts -->
+    <section class="brand-container">
+      <div class="swiper-container brand-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/ardevazSignLogo.jpg" alt="" />
+            <h3>Full Stack Developer</h3>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./images/546613454_122116775816976810_3702264966324116540_n.jpg"
+              alt=""
+            />
+            <h3>Lakbay Pinas Travel & Tours</h3>
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/ArdevazSign.jpg" alt="" />
+            <h3>ArdevazSign</h3>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./images/546613454_122116775816976810_3702264966324116540_n.jpg"
+              alt=""
+            />
+            <h3>Lakbay Pinas Travel and Tours</h3>
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/ardevazWave.jpg" alt="" />
+            <h3>ArdevazSign</h3>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./images/546613454_122116775816976810_3702264966324116540_n.jpg"
+              alt=""
+            />
+            <h3>Lakbay Pinas Travel and Tours</h3>
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/FB_IMG_1755495890325.jpg" alt="" />
+            <h3>Global Pinoy Travel and Tours</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Brand Section End -->
+    <footer>
+      <div class="footer-container">
+        <div class="icon-holder">
+          <img
+            class="img-footer"
+            src="./images/546613454_122116775816976810_3702264966324116540_n.jpg"
+            alt=""
+          />
+          <a href="https://www.facebook.com/share/12LajWEuK5H/"
+            >Lakbay Pinas Travel & Tours</a
+          >
+        </div>
+        <p>Powered by :</p>
+        <div class="icon-holder">
+          <img
+            class="img-footer"
+            src="./images/FB_IMG_1755495890325.jpg"
+            alt=""
+          />
+          <a
+            href="https://www.facebook.com/globalpinoytravel/about_profile_transparency"
+          >
+            Global Pinoy Travel and Tours</a
+          >
+        </div>
+        <div class="icon-holder">
+          <img class="img-footer" src="./images/ArdevazSign.jpg" alt="" />
+          <a href="https://manuel-saavedra-jr.vercel.app/"
+            >Developed & Maintain By ArdevazSign</a
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+    <!-- <script>
+      function sendEmail() {
+        Email.send({
+          Host: 'smtp.gmail.com',
+          Username: 'ardevazsign41@gmail.com',
+          Password: 'owenmygmail@42',
+          To: 'newojunior@gmail.com',
+          From: document.getElementById('email').value,
+          Subject: 'New contact Form Enquiry',
+          Body:
+            'Name: ' +
+            document.getElementById('name').value +
+            '<br> Email: ' +
+            document.getElementById('email').value +
+            '<br> Phone no: ' +
+            document.getElementById('phone').value +
+            '<br> Message: ' +
+            document.getElementById('message').value,
+        }).then((message) => alert('Message Sent Succesfully'));
+      }
+    </script> -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

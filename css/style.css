@@ -1,0 +1,975 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+  --light-blue: #2e49b8;
+  --dark-blue: #051f7b;
+  --orangered: #f56600;
+  --orange: #ff8000;
+  --grenye: #15ef09;
+  --navy: #201cec;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+/* ----- Logo -------------------- */
+header .logo-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2px;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid whitesmoke;
+  box-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+header .logo-holder .inner-holder {
+  padding: 10px 4px;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  border: 1px solid navy;
+  background-color: whitesmoke;
+}
+header .logo-holder .image-logo-hold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .logo-holder .main-logo-pic {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  width: 64px;
+  height: 64px;
+}
+
+header .logo-holder .inner-holder .logo {
+  color: navy;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: underline;
+}
+header .logo-holder .inner-holder .logo-label {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--orangered);
+}
+/* Logo End Here */
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  background-image: linear-gradient(
+    to right,
+    var(--light-blue),
+    navy,
+    cyan,
+    navy,
+    var(--light-blue)
+  );
+  padding: 1rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+*::selection {
+  background-color: var(--orange);
+  color: #fff;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+section {
+  padding: 2rem 9%;
+}
+.heading {
+  margin-top: 20px;
+  text-align: center;
+  padding: 2.5rem 0;
+}
+.heading span {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right, navy, cyan, blue);
+  color: black;
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
+  display: inline-block;
+}
+.heading span.space {
+  background: none;
+}
+.btn {
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 0.6rem;
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--light-blue);
+  color: #fff;
+  letter-spacing: 0.8px;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  border: 0.01rem solid var(--light-blue);
+}
+.btn:hover {
+  border: 0.01rem solid white;
+  background-image: linear-gradient(to right, navy, cyan, blue);
+  color: white;
+}
+header .navbar a {
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0.6rem;
+  color: #fff;
+}
+header .navbar a:hover {
+  border: 0.001px solid white;
+  background-image: linear-gradient(to right, navy, cyan, blue);
+  color: #fff;
+  box-shadow: 1px 1px 10px #ffffff;
+}
+header .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+header .icons i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 4px 6px;
+  font-size: 2.5rem;
+  color: #ffff;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+header .icons i:hover {
+  border-radius: 50%;
+  color: navy;
+  background-color: white;
+  border: 1px solid white;
+}
+header .search-bar-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  padding: 1.5rem 2rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+header .search-bar-container.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+header .search-bar-container #search-bar {
+  width: 100%;
+  padding: 1rem;
+  text-transform: none;
+  color: #333;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+header .search-bar-container label {
+  color: #fff;
+  cursor: pointer;
+  font-size: 3rem;
+  margin-left: 1.5rem;
+}
+header .search-bar-container label:hover {
+  color: var(--orange);
+}
+/* ----------------------- Login ------------------ */
+.login-form-container {
+  position: fixed;
+  z-index: 1000;
+  top: -120%;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form-container.active {
+  top: 0;
+}
+.login-form-container form {
+  border: 0.001px solid rgb(42, 40, 40);
+  margin: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+}
+.login-form-container form h3 {
+  font-size: 3rem;
+  color: #444;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem 0;
+}
+.login-form-container form .box {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.7rem;
+  color: #333;
+  margin: 1.6rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  text-transform: none;
+}
+.login-form-container form .box:focus {
+  border-color: var(--orange);
+}
+.login-form-container form #remember {
+  margin: 2rem 0;
+}
+.login-form-container form label {
+  font-size: 1.5rem;
+}
+.login-form-container form .btn {
+  display: block;
+  width: 100%;
+}
+.login-form-container form p {
+  padding: 1.5rem 0;
+  font-size: 1.5rem;
+  color: #666;
+}
+.login-form-container form p a {
+  color: var(--orange);
+}
+.login-form-container form p a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+.login-form-container #form-close {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  font-size: 5rem;
+  color: #ffff;
+  cursor: pointer;
+}
+#menu-bar {
+  color: #fff;
+  border: 0.1rem solid #fff;
+  border-radius: 0.5rem;
+  font-size: 3rem;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+/* ------------- Home ------------------- */
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  position: relative;
+  z-index: 0;
+}
+.home .content {
+  text-align: center;
+}
+.home .content h3 {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2rem 2rem;
+  font-size: 4.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.home .content p {
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 2.5rem;
+  color: #fff;
+  padding: 2rem 2rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.home .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.home .controls {
+  padding: 1rem;
+  border-radius: 5rem;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 10rem;
+}
+
+.home .controls .vid-btn {
+  height: 2rem;
+  width: 2rem;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--dark-blue);
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+.home .controls .vid-btn.active {
+  background-image: linear-gradient(to right, navy, cyan, blue);
+}
+/* ------------------------------------------ */
+.music-holder {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, navy, cyan, blue);
+}
+/* ------- Book Now Section ------------------ */
+.book .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  padding-top: 40px;
+}
+.book .row .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  padding: 140px;
+  flex: 1 1 40rem;
+  background-image: url(../images/FB_IMG_1755495886328.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.book .row .image img {
+  width: 135%;
+}
+.book .row form {
+  flex: 1 1 40rem;
+  padding: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+.book .row form .inputBox {
+  padding: 0.5rem 0;
+}
+.book .row form .inputBox input {
+  width: 100%;
+  padding: 1rem;
+  border: 1rem solid rgba(0, 0, 0, 0.1);
+  font-size: 1.7rem;
+  color: #333;
+  text-transform: none;
+}
+.book .row form .inputBox h3 {
+  font-size: 2rem;
+  padding: 1rem 0;
+  color: #666;
+}
+/* ----------------------------------------------------------------------- */
+/* ----- Packages --------- */
+.morePackage-holder {
+  display: flex;
+  justify-content: center;
+}
+.moreGallery,
+.btnForMore {
+  border-radius: 6px;
+  padding: 4px 10px;
+  color: gray;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: white;
+}
+.moreGallery:hover,
+.btnForMore:hover {
+  background-color: lightskyblue;
+  color: white;
+}
+.hide-gallery,
+.hidden {
+  display: none;
+}
+.packages .box-container {
+  padding: 10px 110px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.packages .box-container .box {
+  position: relative;
+  flex: 1 1 30rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+.packages .box-container .box .packages-img {
+  border-radius: 10px;
+  height: 60rem;
+  width: 100%;
+  object-fit: cover;
+}
+.packages .box-container .box .card-body {
+  overflow-y: scroll;
+  top: 0;
+  right: -100%;
+  position: absolute;
+  background: #0b121438;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  padding: 30px 30px 30px 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 2s;
+  border: 0.5px solid white;
+  border-radius: 10px;
+}
+.packages .box-container .box:hover .card-body {
+  right: 0;
+}
+.packages .box-container .box .card-body::-webkit-scrollbar {
+  display: none;
+}
+.packages .box-container .box .card-body h3 {
+  text-align: center;
+  margin-top: 350px;
+  font-size: 2rem;
+  /* color: #333; */
+  color: whitesmoke;
+}
+.packages .box-container .box .card-body h3 i {
+  margin-right: 5px;
+  color: chartreuse;
+}
+.packages .box-container .box .card-body p {
+  text-align: justify;
+  text-indent: 40px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* color: #666; */
+  color: whitesmoke;
+  padding: 1rem 0;
+}
+.packages .box-container .box .card-body .stars i {
+  font-size: 1.7rem;
+  color: chartreuse;
+}
+.packages .box-container .box .card-body .price {
+  font-size: 2rem;
+  color: #333;
+  padding-top: 1rem;
+}
+.packages .box-container .box .card-body .price span {
+  font-size: 1.5rem;
+  color: #666;
+  text-decoration: line-through;
+}
+.packages-btn {
+  width: 130px;
+}
+
+/*------------- services ---------------------------- */
+.services .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 20px 160px;
+}
+.services .box-container .box {
+  flex: 1 1 30rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+.services .box-container .box i {
+  padding: 1rem;
+  font-size: 5rem;
+  color: var(--grenye);
+}
+.services .box-container .box h3 {
+  font-size: 2.5rem;
+  color: #333;
+}
+.services .box-container .box p {
+  text-indent: 80px;
+  text-align: justify;
+  font-size: 1.5rem;
+  color: #666;
+  padding: 1rem 1.5rem;
+}
+.services .box-container .box:hover {
+  border-radius: 10px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+/* ------ Gallery Section --------------------- */
+
+.gallery .box-container {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 20px 160px;
+}
+.gallery .box-container .box {
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border: 1rem solid #ffff;
+  border-radius: 0.5rem;
+  flex: 1 1 30rem;
+  height: 56rem;
+  position: relative;
+}
+.gallery .box-container .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.gallery .box-container .box .content {
+  position: absolute;
+  top: -250%;
+  left: 0;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  transition: 2s; /* Put transition here */
+  cursor: pointer;
+}
+.gallery .box-container .box:hover .content {
+  height: 100%;
+  text-align: start;
+  overflow-y: scroll;
+  top: 0;
+}
+.gallery .box-container .box .content::-webkit-scrollbar {
+  display: none;
+}
+.gallery .box-container .box .content h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--grenye);
+}
+.gallery .box-container .box .content p {
+  font-size: 1.5rem;
+  color: #eee;
+  padding: 0.5rem;
+}
+
+/* ------ Review Section Starts ------------------- */
+.review .review-slider {
+  margin-top: 60px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 160px;
+}
+
+.review .box {
+  padding: 2rem;
+  column-gap: 40px;
+  text-align: center;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+.review .box img {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.review .box h3 {
+  color: #333;
+  font-size: 2.5rem;
+}
+.review .box p {
+  color: #666;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+.review .box .stars i {
+  color: var(--grenye);
+  font-size: 1.7rem;
+}
+/* ----------Review Section End Here -------------- */
+/* ------ Contact -------------------- */
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  align-items: center;
+}
+.contact .row .image {
+  flex: 1 1 40rem;
+}
+.contact .row .image img {
+  border: 2rem solid white;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 80%;
+}
+.contact .row form {
+  flex: 1 1 40rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 3rem;
+}
+.contact .row form .inputBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contact .row form .inputBox input,
+.contact .row form textarea {
+  width: 49%;
+  margin: 1rem 0;
+  padding: 1rem;
+  font-size: 1.7rem;
+  color: #333;
+  background: #f7f7f7;
+  text-transform: none;
+}
+.contact .row form textarea {
+  height: 15rem;
+  resize: none;
+  width: 100%;
+}
+/* brand section */
+.brand-container {
+  background: #f2f0f0;
+  padding: 4rem;
+  text-align: center;
+}
+.brand-container .brand-slider .swiper-wrapper .swiper-slide img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.brand-container .brand-slider .swiper-wrapper .swiper-slide h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+/* foorter */
+footer .footer-container {
+  background-image: linear-gradient(to right, navy, cyan, blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 60px;
+  padding: 1rem;
+}
+footer .footer-container a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  font-family: cursive;
+}
+footer .footer-container a:hover {
+  text-decoration: underline;
+  color: navy;
+}
+footer .footer-container p {
+  color: white;
+}
+.img-footer {
+  border: 0.5px solid whitesmoke;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+.icon-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+body {
+  height: 300rem;
+}
+
+/* ----1200--------- Query Section ------------------ */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+  .book .row .image img {
+    width: 600px;
+  }
+  .book .row .image {
+    padding: 40px;
+  }
+}
+/* ------------------------------------------------- */
+/* --------------- 1080 ---------------------------- */
+@media (max-width: 1080px) {
+  header {
+    justify-content: center;
+    padding: 1rem;
+    column-gap: 40px;
+  }
+
+  header .navbar a {
+    padding: 1px 3px;
+    font-size: 1.8rem;
+    margin: 0 0rem;
+  }
+}
+/* -------------------------------------------------- */
+/* ----------------- 991px ---------------------------- */
+@media (max-width: 991px) {
+  header {
+    padding: 2rem;
+    column-gap: 40px;
+  }
+  section {
+    padding: 2rem;
+  }
+  header .navbar a {
+    padding: 1px 3px;
+    font-size: 1.6rem;
+    margin: 0 0rem;
+  }
+  header .logo-holder .inner-holder {
+    display: none;
+  }
+  .book .row .image img {
+    width: 600px;
+  }
+  .book .row .image {
+    padding: 40px;
+  }
+}
+/* -------------------------------------------- */
+/* --------------- 831 ------------------------ */
+@media (max-width: 831px) {
+  header {
+    /* justify-content: center; */
+    padding: 1rem 8%;
+    /* column-gap: 28px; */
+  }
+  header .logo-holder .inner-holder {
+    display: none;
+  }
+  /* ----- Logo -------------------- */
+
+  /* header .logo-holder {
+  column-gap: 2px;
+  padding: 2px;
+}
+header .logo-holder .inner-holder {
+  padding: 1px 0.5px;
+  
+}
+ header .logo-holder .main-logo-pic {
+  width: 60px;
+  height: 60px;
+} */
+
+  /* header .logo-holder .inner-holder .logo {
+  font-size: 8px;
+}
+header .logo-holder .inner-holder .logo-label {
+  font-size: 1rem;
+} */
+  /* Logo End Here */
+}
+/* -------------------------------------------------- */
+/* ------------ 768 --------------------------------- */
+@media (max-width: 768px) {
+  #menu-bar {
+    display: initial;
+  }
+  header .logo-holder .inner-holder {
+    display: block;
+  }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #333;
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    clip-path: polygon(0 0, 100% 0, 0 0);
+  }
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  header .navbar a {
+    display: block;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background: #222;
+  }
+  .row {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  footer .footer-container {
+    padding: 20px 10px;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: baseline;
+  }
+  .book .row .image img {
+    width: 450px;
+  }
+  .book .row .image {
+    padding: 20px;
+  }
+}
+
+/* -------------------------------------------------- */
+
+/* ----------- 610----------------------------------- */
+@media (max-width: 610px) {
+  .packages .box-container,
+  .gallery .box-container,
+  .services .box-container {
+    row-gap: 3.5rem;
+    padding: 20px 20px;
+  }
+  header {
+    column-gap: 40px;
+  }
+  #menu-bar {
+    display: initial;
+  }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #333;
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    clip-path: polygon(0 0, 100% 0, 0 0);
+  }
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  header .navbar a {
+    display: block;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background: #222;
+  }
+  .row {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  footer .footer-container {
+    padding: 20px 10px;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: baseline;
+  }
+  .book .row .image img {
+    width: 450px;
+  }
+  .book .row .image {
+    padding: 20px;
+  }
+}
+/* ----------------------------------------------- */
+
+/* ------- 450 ------------------------------------ */
+@media (max-width: 450px) {
+  .packages .box-container,
+  .gallery .box-container,
+  .services .box-container {
+    row-gap: 3.5rem;
+    padding: 20px 10px;
+  }
+  .book .row form {
+    width: 90%;
+    padding: 2rem;
+  }
+  html {
+    font-size: 50%;
+  }
+  header .logo-holder .main-logo-pic {
+    display: none;
+  }
+  header .logo-holder .inner-holder {
+    display: block;
+  }
+  header .logo-holder {
+    margin: 0.5rem 0;
+  }
+  .book .row .image img {
+    width: 350px;
+  }
+  .book .row .image {
+    padding: 20px;
+  }
+  .heading span {
+    font-size: 2.5rem;
+  }
+  .book .row form {
+    width: 80%;
+    /* padding: 0;
+    margin: 0; */
+  }
+  .contact .row form .inbox input {
+    width: 100%;
+  }
+  footer .footer-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 395px) {
+  header .logo-holder .inner-holder {
+    display: none;
+  }
+  header .logo-holder .main-logo-pic {
+    display: block;
+  }
+}
