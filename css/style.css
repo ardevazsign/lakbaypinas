@@ -622,6 +622,7 @@ header .search-bar-container label:hover {
   height: 13rem;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center;
   margin-bottom: 1rem;
 }
 .review .box h3 {
@@ -690,6 +691,8 @@ header .search-bar-container label:hover {
   text-align: center;
 }
 .brand-container .brand-slider .swiper-wrapper .swiper-slide img {
+  object-fit: contain;
+  object-position: center;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -957,10 +960,11 @@ header .logo-holder .inner-holder .logo-label {
     display: block;
   }
   header .logo-holder {
-    margin: 0.5rem 0;
+    margin-left: 20px;
+    /* margin: 0.5rem 0 0; */
   }
   header .icons {
-    column-gap: 5px;
+    column-gap: 2px;
   }
   .book .row .image img {
     width: 350px;
@@ -979,12 +983,6 @@ header .logo-holder .inner-holder .logo-label {
     width: 80%;
     /* padding: 0;
     margin: 0; */
-  }
-  .review .box img {
-    width: 14rem;
-    height: 14rem;
-    object-position: center;
-    margin-bottom: 1rem;
   }
   .contact .row form .inbox input {
     width: 100%;
