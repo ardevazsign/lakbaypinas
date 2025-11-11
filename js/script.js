@@ -168,6 +168,22 @@ playVideoAndMusic(currentIndex);
 
 //  Send Email From Contact Section
 
+// ------------------------music & video stop when scroll-------------------------------------------
+const video = document.getElementById('video-slider');
+const music = document.getElementById('myMusic');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  if (scrollY > 50) {
+    video.pause();
+    music.pause();
+  } else {
+    video.play();
+    music.play();
+  }
+});
+
 //------------------------ Hide and show packages -----------------------
 // Packages
 const morePackage = document.querySelector('.btnForMore');

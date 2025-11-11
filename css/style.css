@@ -8,6 +8,10 @@
   --grenye: #15ef09;
   --navy: #201cec;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
 * {
   margin: 0;
   padding: 0;
@@ -921,6 +925,10 @@ header .logo-holder .inner-holder .logo-label {
 
 /* ------- 450 ------------------------------------ */
 @media (max-width: 450px) {
+  body,
+  html {
+    overflow-x: hidden;
+  }
   .packages .box-container,
   .gallery .box-container,
   .services .box-container {
@@ -959,6 +967,11 @@ header .logo-holder .inner-holder .logo-label {
   }
   .contact .row form .inbox input {
     width: 100%;
+  }
+  .contact .row .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   footer .footer-container {
     flex-direction: column;
