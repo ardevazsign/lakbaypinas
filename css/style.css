@@ -942,7 +942,12 @@ header .logo-holder .inner-holder .logo-label {
   html {
     font-size: 50%;
   }
+  header {
+    justify-content: center;
+  }
   header .logo-holder .main-logo-pic {
+    width: 50px;
+    height: 50px;
     display: none;
   }
   header .logo-holder .inner-holder {
@@ -950,6 +955,9 @@ header .logo-holder .inner-holder .logo-label {
   }
   header .logo-holder {
     margin: 0.5rem 0;
+  }
+  header .icons {
+    column-gap: 5px;
   }
   .book .row .image img {
     width: 350px;
