@@ -604,14 +604,14 @@ header .search-bar-container label:hover {
 
 /* ------ Review Section Starts ------------------- */
 .review .review-slider {
-  margin-top: 60px;
+  margin-top: 40px;
   padding-top: 50px;
   padding-bottom: 50px;
   margin-bottom: 160px;
 }
 
 .review .box {
-  padding: 2rem;
+  padding: 4rem;
   column-gap: 40px;
   text-align: center;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -629,8 +629,11 @@ header .search-bar-container label:hover {
   font-size: 2.5rem;
 }
 .review .box p {
+  text-align: justify;
+  text-indent: 40px;
   color: #666;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
   padding: 1rem 0;
 }
 .review .box .stars i {
@@ -968,10 +971,20 @@ header .logo-holder .inner-holder .logo-label {
   .heading span {
     font-size: 2.5rem;
   }
+  .heading .space {
+    width: 100%; /* forces next word to start on a new line */
+    height: 0; /* no extra spacing */
+  }
   .book .row form {
     width: 80%;
     /* padding: 0;
     margin: 0; */
+  }
+  .review .box img {
+    width: 14rem;
+    height: 14rem;
+    object-position: center;
+    margin-bottom: 1rem;
   }
   .contact .row form .inbox input {
     width: 100%;
