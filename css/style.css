@@ -103,10 +103,11 @@ section {
   padding: 2.5rem 0;
 }
 .heading span {
-  font-size: 3.5rem;
+  font-size: 3.6rem;
   font-weight: 700;
   background-image: linear-gradient(to right, navy, cyan, blue);
   color: black;
+  -webkit-text-stroke: 2px whitesmoke;
   border-radius: 0.5rem;
   padding: 2rem 1rem;
   display: inline-block;
@@ -167,6 +168,11 @@ header .icons i {
   margin-right: 1rem;
 }
 header .icons i:hover {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  padding: 4px 6px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   color: navy;
   background-color: white;
@@ -618,10 +624,11 @@ header .search-bar-container label:hover {
   border-radius: 0.5rem;
 }
 .review .box img {
+  border: 1px solid gray;
+  max-width: 100%;
   width: 13rem;
   height: 13rem;
   border-radius: 50%;
-  object-fit: cover;
   object-position: center;
   margin-bottom: 1rem;
 }
