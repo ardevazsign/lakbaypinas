@@ -24,8 +24,8 @@ const db = getFirestore(app);
 // DOM
 const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const phoneInput = document.getElementById('phone');
+const emailInput = document.getElementById('emailContact');
+const phoneInput = document.getElementById('phoneContact');
 const subjectInput = document.getElementById('subject');
 const messageInput = document.getElementById('message');
 
