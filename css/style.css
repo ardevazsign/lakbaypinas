@@ -79,7 +79,7 @@ header {
     navy,
     var(--light-blue)
   );
-  padding: 1rem 10%;
+  padding: 0rem 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,7 +95,7 @@ html {
   scroll-behavior: smooth;
 }
 section {
-  padding: 2rem 9%;
+  padding: 2.5rem 9%;
 }
 .heading {
   margin-top: 20px;
@@ -212,81 +212,6 @@ header .search-bar-container label {
 header .search-bar-container label:hover {
   color: var(--orange);
 }
-/* ----------------------- Login ------------------ */
-/* .regiter-form-container, */
-/* .login-form-container {
-  position: fixed;
-  z-index: 1000;
-  top: -120%;
-  left: 0;
-  min-height: 100vh;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-/* .regiter-form-container.active, */
-/* .login-form-container.active {
-  top: 0;
-}
-.login-form-container form {
-  border: 0.001px solid rgb(42, 40, 40);
-  margin: 2rem;
-  padding: 1.5rem 2rem;
-  border-radius: 0.5rem;
-  background: #fff;
-  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
-}
-.login-form-container form h3 {
-  font-size: 3rem;
-  color: #444;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 1rem 0;
-}
-.login-form-container form .box {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.7rem;
-  color: #333;
-  margin: 1.6rem 0;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  text-transform: none;
-}
-.login-form-container form .box:focus {
-  border-color: var(--orange);
-}
-.login-form-container form #remember {
-  margin: 2rem 0;
-}
-.login-form-container form label {
-  font-size: 1.5rem;
-}
-.login-form-container form .btn {
-  display: block;
-  width: 100%;
-}
-.login-form-container form p {
-  padding: 1.5rem 0;
-  font-size: 1.5rem;
-  color: #666;
-}
-.login-form-container form p a {
-  color: var(--orange);
-}
-.login-form-container form p a:hover {
-  color: #333;
-  text-decoration: underline;
-}
-.login-form-container #form-close {
-  position: absolute;
-  top: 2rem;
-  right: 3rem;
-  font-size: 5rem;
-  color: #ffff;
-  cursor: pointer;
-} */
 
 .open-btnLogin {
   padding: 10px 20px;
@@ -902,14 +827,13 @@ body.modal-open {
   padding-bottom: 50px;
   margin-bottom: 160px;
 }
-/* .review .swiper-wrapper {
-} */
 .review .swiper-container .swiper-wrapper .swiper-slide .box {
   padding: 4rem;
   column-gap: 40px;
   text-align: center;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
+  height: 440px;
 }
 .review .swiper-container .swiper-wrapper .swiper-slide .box img {
   object-fit: contain;
@@ -1304,8 +1228,12 @@ header .logo-holder .inner-holder .logo-label {
   }
   .book .row form {
     width: 80%;
-    /* padding: 0;
-    margin: 0; */
+  }
+  .review .review-slider {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
   .contact .row form .inbox input {
     width: 100%;
@@ -1316,11 +1244,11 @@ header .logo-holder .inner-holder .logo-label {
     align-items: center;
   }
   .brand-container {
-    padding-bottom: 100px;
-    margin-bottom: 160px;
+    padding-bottom: 20px;
   }
   footer .footer-container {
     flex-direction: column;
+    position: static;
   }
   footer .footer-container .copyRight-container {
     display: flex;
@@ -1330,7 +1258,7 @@ header .logo-holder .inner-holder .logo-label {
   footer .footer-container .copyRight-container p {
     color: white;
     margin-top: 20px;
-    margin-left: 60px;
+    margin-left: 75px;
   }
 }
 

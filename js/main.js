@@ -262,4 +262,157 @@ document.addEventListener('DOMContentLoaded', () => {
   calculateTotal();
 });
 
-// Stars Rating Functionality
+// ----- search function code --------------------
+/**********************************************************
+ * Example data source: an array of objects.
+ * You can replace this with data fetched from API or
+ * render existing DOM elements and adapt the same filtering logic.
+ **********************************************************/
+const data = [
+  {
+    id: 1,
+    name: 'Bangkok Travel Package',
+    description: '5 nights in Bangkok with food tour.',
+  },
+  {
+    id: 2,
+    name: 'Taipei City Tour',
+    description: '2-day Taipei highlights and night market.',
+  },
+  {
+    id: 3,
+    name: 'Hong Kong Express',
+    description: '3 days exploring Hong Kong island.',
+  },
+  {
+    id: 4,
+    name: 'Singapore Family Trip',
+    description: 'Universal Studios and Gardens by the Bay.',
+  },
+  {
+    id: 5,
+    name: 'Local Beach Getaway',
+    description: 'Relaxing weekend near the sea.',
+  },
+  {
+    id: 6,
+    name: 'Mountain Hike',
+    description: 'Guided hike with overnight camping.',
+  },
+];
+
+// DOM refs
+const input = document.getElementById('search');
+const resultsEl = document.getElementById('results');
+const metaInfo = document.getElementById('metaInfo');
+const clearBtn = document.getElementById('clearBtn');
+
+// debounce helper — prevents running search on every keystroke instantly
+function debounce(fn, wait = 200) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
+// escape RegExp special chars for safe search
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// highlight matched substring
+function highlight(text, query) {
+  if (!query) return text;
+  const q = escapeRegExp(query);
+  const regex = new RegExp('(' + q + ')', 'ig');
+  return text.replace(regex, '<span class="highlight">$1</span>');
+}
+
+// render results (from array)
+function renderList(items, query = '') {
+  resultsEl.innerHTML = '';
+  if (!items.length) {
+    resultsEl.innerHTML = `<div class="no-results">No results for "<strong>${escapeHtml(
+      query
+    )}</strong>"</div>`;
+    metaInfo.textContent = `0 results`;
+    return;
+  }
+  metaInfo.textContent = `${items.length} result${items.length > 1 ? 's' : ''}`;
+  const frag = document.createDocumentFragment();
+  for (const it of items) {
+    const el = document.createElement('article');
+    el.className = 'item';
+    el.setAttribute('tabindex', 0);
+    el.innerHTML = `
+          <div>
+            <h4>${highlight(escapeHtml(it.name), query)}</h4>
+            <p>${highlight(escapeHtml(it.description), query)}</p>
+          </div>
+        `;
+    frag.appendChild(el);
+  }
+  resultsEl.appendChild(frag);
+}
+
+// Escape user-visible text to avoid XSS when using innerHTML
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// search algorithm: checks if query matches any chosen fields
+function search(query) {
+  const q = String(query || '').trim();
+  if (!q) {
+    renderList(data, '');
+    return;
+  }
+
+  const qLower = q.toLowerCase();
+  const filtered = data.filter((item) => {
+    // match name or description (you can add more fields)
+    return (
+      item.name.toLowerCase().includes(qLower) ||
+      item.description.toLowerCase().includes(qLower)
+    );
+  });
+
+  renderList(filtered, q);
+}
+
+// initial render
+renderList(data);
+
+// wire up events
+const debouncedSearch = debounce((e) => search(e.target.value), 180);
+
+input.addEventListener('input', debouncedSearch);
+
+// keyboard helpers
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    input.value = '';
+    search('');
+    input.blur();
+  } else if (e.key === 'Enter') {
+    // optional: focus first result
+    const first = resultsEl.querySelector('.item');
+    if (first) first.focus();
+  }
+});
+
+clearBtn.addEventListener('click', () => {
+  input.value = '';
+  search('');
+  input.focus();
+});
+
+// If you want to search using existing DOM items instead of an array:
+// - give each item a class .item and data-name / data-description attributes
+// - adapt the search() to loop over DOM nodes and toggle hidden/display
