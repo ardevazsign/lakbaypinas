@@ -396,7 +396,9 @@ header .search-bar-container label:hover {
     transform: scale(1);
   }
 }
-
+.special {
+  display: none;
+}
 #menu-bar {
   color: #fff;
   border: 0.1rem solid #fff;
@@ -604,6 +606,7 @@ body.modal-open {
   color: #15ef09;
 }
 /* --- Modal End Here -------------- */
+
 .book .row {
   display: flex;
   flex-wrap: wrap;
@@ -901,14 +904,14 @@ body.modal-open {
 }
 /* .review .swiper-wrapper {
 } */
-.review .box {
+.review .swiper-container .swiper-wrapper .swiper-slide .box {
   padding: 4rem;
   column-gap: 40px;
   text-align: center;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
 }
-.swiper-container .swiper-wrapper .swiper-slide .box img {
+.review .swiper-container .swiper-wrapper .swiper-slide .box img {
   object-fit: contain;
   object-position: center;
   width: 100px;
@@ -1213,7 +1216,7 @@ header .logo-holder .inner-holder .logo-label {
     row-gap: 20px;
   }
   footer .footer-container {
-    padding: 20px 10px;
+    padding: 20px 10px 5px 10px;
     flex-direction: column;
     row-gap: 8px;
     align-items: baseline;
@@ -1233,15 +1236,37 @@ header .logo-holder .inner-holder .logo-label {
   html {
     overflow-x: hidden;
   }
-  .packages .box-container,
-  .gallery .box-container,
+  .special {
+    display: block;
+  }
+  .home {
+    margin-top: 100px;
+  }
+  .book {
+    margin-bottom: 850px;
+  }
+  .packages .box-container {
+    row-gap: 3.5rem;
+    padding: 20px 10px;
+  }
+  .gallery .box-container {
+    row-gap: 3.5rem;
+    padding: 20px 10px;
+  }
   .services .box-container {
     row-gap: 3.5rem;
     padding: 20px 10px;
   }
-  .book .row form {
+
+  .book .row .book-form {
     width: 90%;
     padding: 2rem;
+  }
+  .book .input-holder {
+    flex-direction: column;
+  }
+  .book .book-form .input-holder .inputBoxes input {
+    width: 100%;
   }
   html {
     font-size: 50%;
@@ -1292,10 +1317,20 @@ header .logo-holder .inner-holder .logo-label {
   }
   .brand-container {
     padding-bottom: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 160px;
   }
   footer .footer-container {
     flex-direction: column;
+  }
+  footer .footer-container .copyRight-container {
+    display: flex;
+    align-items: right;
+    justify-content: center;
+  }
+  footer .footer-container .copyRight-container p {
+    color: white;
+    margin-top: 20px;
+    margin-left: 60px;
   }
 }
 

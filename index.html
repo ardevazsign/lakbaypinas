@@ -42,6 +42,7 @@
         <a class="nav-link" href="#gallery">Gallery</a>
         <a class="nav-link" href="#review">Review</a>
         <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link special" href="admin/admin-login.html">Admin</a>
       </nav>
 
       <div class="icons">
@@ -202,7 +203,7 @@
           <img class="main-image" src="images/ardevaz/header.png" alt="" />
         </div>
 
-        <form id="quoteForm">
+        <form id="quoteForm" class="book-form">
           <div class="input-holder">
             <div class="inputBoxes">
               <h3>Origin</h3>
@@ -1593,8 +1594,18 @@
             >Developed & Maintain By ArdevazSign</a
           >
         </div>
+        <div class="copyRight-container">
+          <p>
+            &copy; <span id="year"></span> Lakbay Pinas Travel and Tours. All
+            rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
+    <script>
+      // Get current year and insert into the span
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
     <!-- <script src="js/index.js"></script> -->
