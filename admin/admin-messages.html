@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Messages</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #unreadCount {
+        font-weight: bold;
+      }
+      .message-card {
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .message-card.read {
+        opacity: 0.6;
+      }
+      button {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Admin - Contact Messages</h1>
+      <h3>Unread Messages: <span id="unreadCount">0</span></h3>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="Search messages..." />
+
+    <div id="messagesContainer">Loading messages...</div>
+
+    <script type="module" src="../js/admin-messages.js"></script>
+  </body>
+</html>

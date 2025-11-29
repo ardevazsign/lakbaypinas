@@ -1,9 +1,46 @@
+// document
+//   .getElementById('registerForm')
+//   .addEventListener('submit', function (e) {
+//     e.preventDefault();
+
+//     document.getElementById('registerEmaill').value = '';
+//     document.getElementById('registerPassword').value = '';
+//   });
+
+const openLogin = document.getElementById('openModalLogin');
+const modalAuth = document.getElementById('authModal');
+const closeLogin = document.getElementById('form-close');
+
+openLogin.addEventListener('click', () => {
+  modalAuth.classList.add('active');
+});
+
+closeLogin.addEventListener('click', () => {
+  modalAuth.classList.remove('active');
+});
+
+// SWITCH LOGIN ↔ REGISTER FORMS
+const switchLinks = document.querySelectorAll('.switch-form');
+
+switchLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    document
+      .querySelectorAll('.form-login')
+      .forEach((f) => f.classList.remove('active'));
+    document.getElementById(link.dataset.target).classList.add('active');
+  });
+});
+
+// Default show login form
+document.getElementById('loginForm').classList.add('active');
+
+// --------------------------------------------------------------------------- Up here is Login / Register
 let searchBtn = document.querySelector('#search-btn');
 let searchBar = document.querySelector('.search-bar-container');
 
-let formBtn = document.querySelector('#login-btn');
-let loginForm = document.querySelector('.login-form-container');
-let formClose = document.querySelector('#form-close');
+// let formBtn = document.querySelector('.open-btnLogin');
+let loginFormOne = document.querySelector('.login-form-container');
+// let formClose = document.querySelector('.form-close');
 
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
@@ -23,7 +60,7 @@ window.onscroll = () => {
   searchBar.classList.remove('active');
   menu.classList.remove('fa-times');
   navbar.classList.remove('active');
-  loginForm.classList.remove('active');
+  loginFormOne.classList.remove('active');
 };
 
 menu.addEventListener('click', () => {
@@ -36,12 +73,12 @@ searchBtn.addEventListener('click', () => {
   searchBar.classList.toggle('active');
 });
 
-formBtn.addEventListener('click', () => {
-  loginForm.classList.add('active');
-});
-formClose.addEventListener('click', () => {
-  loginForm.classList.remove('active');
-});
+// formBtn.addEventListener('click', () => {
+//   loginForm.classList.add('active');
+// });
+// formClose.addEventListener('click', () => {
+//   loginForm.classList.remove('active');
+// });
 
 videoBtn.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -53,7 +90,6 @@ videoBtn.forEach((btn) => {
 });
 
 // Slider
-
 var swiper = new Swiper('.review-slider', {
   spaceBetween: 20,
   loop: true,
@@ -117,7 +153,7 @@ videoBtn.forEach((btn) => {
   });
 });
 
-// observer.observe(homeSection);
+observer.observe(homeSection);
 function playVideoAndMusic(index) {
   videoBtn.forEach((b) => b.classList.remove('active'));
   videoBtn[index].classList.add('active');
@@ -226,3 +262,103 @@ moreGallery.addEventListener('click', () => {
     });
   }
 });
+
+// Hide and show for package and gallery end here
+
+// ------- Modal appear ---------------------------
+const bookSection = document.getElementById('book');
+const modal = document.getElementById('modal');
+const closeModal = document.getElementById('closeModal');
+const closeBtn = document.getElementById('closeBtn');
+
+// Function to check if book section is centered
+function checkBookSectionCenter() {
+  const rect = bookSection.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const sectionCenter = rect.top + rect.height / 2;
+
+  // If the center of the book section is near the center of the viewport
+  if (
+    sectionCenter > windowHeight / 2 - 100 &&
+    sectionCenter < windowHeight / 2 + 100
+  ) {
+    modal.style.display = 'flex';
+  } else {
+    modal.style.display = 'none';
+  }
+}
+// Close modal (both ways)
+function hideModal() {
+  modal.style.display = 'none';
+}
+
+closeModal.addEventListener('click', hideModal);
+closeBtn.addEventListener('click', hideModal);
+
+window.addEventListener('scroll', checkBookSectionCenter);
+// --------------------------------------------------------------
+// --------------------------------------------------------------
+let modalClosed = false;
+
+function checkBookSectionCenter() {
+  if (modalClosed) return; // Prevent showing again
+  const rect = bookSection.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const sectionCenter = rect.top + rect.height / 2;
+
+  if (
+    sectionCenter > windowHeight / 2 - 100 &&
+    sectionCenter < windowHeight / 2 + 100
+  ) {
+    modal.style.display = 'flex';
+  } else {
+    modal.style.display = 'none';
+  }
+}
+
+function hideModal() {
+  modal.style.display = 'none';
+  modalClosed = true; // Prevent reopening
+}
+
+// Modal appear end here
+
+// for book flight section to sum the count of passenger
+/**
+ * The main function to read all category inputs, sum them up, and update the total.
+ */
+function calculateTotal() {
+  // Helper function to safely get the numeric value of an input by its ID.
+  // It parses the value to an integer and defaults to 0 if the value is empty or invalid.
+  const getValue = (id) => {
+    const element = document.getElementById(id);
+    // Use parseInt and check for NaN (Not a Number)
+    const value = parseInt(element.value) || 0;
+    // Ensure the value is not negative (since we set min="0" in HTML)
+    return Math.max(0, value);
+  };
+
+  // 1. Get the values of all passenger categories
+  const seniorCount = getValue('seniorCitizen');
+  const pwdCount = getValue('pwd');
+  const adultCount = getValue('adult');
+  const childrenCount = getValue('children');
+  const infantCount = getValue('infants');
+
+  // 2. Calculate the total sum
+  const total =
+    seniorCount + pwdCount + adultCount + childrenCount + infantCount;
+
+  // 3. Update the 'Total Passenger' display field
+  const totalInput = document.getElementById('totalPassenger');
+  totalInput.value = total;
+
+  // Optional: You could apply a visual cue if the total is updated
+  totalInput.classList.add('ring-4', 'ring-blue-100');
+  setTimeout(() => {
+    totalInput.classList.remove('ring-4', 'ring-blue-100');
+  }, 300);
+}
+
+// Initialize the total count when the page loads
+document.addEventListener('DOMContentLoaded', calculateTotal);

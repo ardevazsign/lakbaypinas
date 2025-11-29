@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insurance Policy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Javascrip file -->
+    <script type="module" src="js/login.js"></script>
+    <script type="module" src="js/register.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="menu-bar" class="fas fa-bars"></div>
+      <div class="logo-holder">
+        <div class="image-logo-hold">
+          <img class="main-logo-pic" src="../images/lakbayPinas.jpg" alt="" />
+        </div>
+        <div class="inner-holder">
+          <a class="logo" href="">Lakbay Pinas</a>
+          <h4 class="logo-label">Travel & Tours</h4>
+        </div>
+      </div>
+      <nav class="navbar">
+        <a class="nav-link" href="/index.html#home">Home</a>
+        <a class="nav-link" href="/index.html#book">Book</a>
+        <a class="nav-link" href="/index.html#packages">Packages</a>
+        <a class="nav-link" href="/index.html#services">Services</a>
+        <a class="nav-link" href="/index.html#gallery">Gallery</a>
+        <a class="nav-link" href="/index.html#review">Review</a>
+        <a class="nav-link" href="/index.html#contact">Contact</a>
+      </nav>
+
+      <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user open-btnLogin" id="openModalLogin"></i>
+      </div>
+      <!-- for search bar -->
+      <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here..." />
+        <label for="search-bar" class="fas fa-search"></label>
+      </form>
+      <!-- search bar up here -->
+    </header>
+    <!-- login / Register -->
+    <div class="login-form-container" id="authModal">
+      <i class="fas fa-times form-close" id="form-close"></i>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="form-login active">
+        <h3 class="loginTitle">Login</h3>
+
+        <label for="loginEmail">Email</label>
+        <input
+          type="email"
+          id="loginEmail"
+          class="inputbox"
+          placeholder="Email..."
+          required
+        />
+
+        <label for="loginPassword">Password</label>
+        <input
+          type="password"
+          id="loginPassword"
+          class="inputbox"
+          placeholder="Password..."
+          required
+        />
+
+        <button type="submit" class="btnLogin" id="loginSubmit">
+          Login Now
+        </button>
+
+        <p class="loginPara">
+          Don't have an account?
+          <span class="switch-form" data-target="registerForm">Register →</span>
+        </p>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="registerForm" class="form-login">
+        <h3 class="loginTitle">Register</h3>
+
+        <label for="registerEmail">Email</label>
+        <input
+          type="email"
+          id="registerEmail"
+          class="inputbox"
+          placeholder="Email..."
+          required
+        />
+
+        <label for="registerPassword">Password</label>
+        <input
+          type="password"
+          id="registerPassword"
+          class="inputbox"
+          placeholder="Password..."
+          required
+        />
+
+        <button type="submit" class="btnLogin" id="registerSubmit">
+          Create Account
+        </button>
+
+        <p class="loginPara">
+          Already have an account?
+          <span class="switch-form" data-target="loginForm">Login →</span>
+        </p>
+      </form>
+    </div>
+
+    <!-- id="login-btn"   previus icon as triger Id  -->
+
+    <!-- Login Form -->
+    <!-- <div class="login-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+      <form action="">
+        <h3>Login</h3>
+        <input
+          type="email"
+          class="box"
+          placeholder="Enter your email here...."
+        />
+        <input
+          type="password"
+          class="box"
+          placeholder="Enter your email here...."
+        />
+        <input type="submit" value="login now" class="btn" />
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remebeer me</label>
+        <p>forgot password?<a href="">Click here</a></p>
+        <p>Don't have an account?<a href="">register now</a></p>
+      </form>
+    </div> -->
+    <!-- Login Form End here -->
+    <main class="main-container">
+      <section class="policy-content">
+        <h2>1. Policy Overview</h2>
+        <p>
+          This Personal Accident Insurance provides financial protection in the
+          event of accidental death, injury, or disability sustained by the
+          insured. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          vitae sapien sed ipsum facilisis tristique sit amet nec nulla.
+        </p>
+
+        <h2>2. Coverage Details</h2>
+        <p>
+          The policy covers accidental bodily injury resulting directly and
+          independently of all other causes. Cras fringilla metus vel ante
+          congue, ac ultrices ex consequat. Nullam ultricies, nunc id commodo
+          finibus, elit justo facilisis neque, sed pretium purus libero non
+          velit.
+        </p>
+
+        <ul>
+          <li>Accidental Death Benefit: ₱500,000</li>
+          <li>Permanent Total Disability: ₱400,000</li>
+          <li>Medical Reimbursement: ₱50,000</li>
+        </ul>
+
+        <h2>3. Exclusions</h2>
+        <p>
+          This policy does not cover losses caused directly or indirectly by
+          intentional self-injury, participation in hazardous activities, war,
+          or illegal acts. Suspendisse potenti. Vivamus tristique justo sed
+          neque accumsan, ut hendrerit sapien lacinia.
+        </p>
+
+        <h2>4. Claims Procedure</h2>
+        <p>
+          In case of accident, the insured or beneficiary must notify the
+          company within 30 days and submit complete documentation. Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Morbi
+          eget augue a mi varius finibus.
+        </p>
+
+        <h2>5. Declaration</h2>
+        <p>
+          I hereby declare that I have read and understood the terms and
+          conditions of this insurance policy. Praesent tincidunt orci et ex
+          bibendum, non dictum justo tristique.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="icon-holder">
+          <img class="img-footer" src="../images/lakbayPinas.jpg" alt="" />
+          <a href="https://www.facebook.com/share/12LajWEuK5H/"
+            >Lakbay Pinas Travel & Tours</a
+          >
+        </div>
+        <p>Powered by :</p>
+        <div class="icon-holder">
+          <img
+            class="img-footer"
+            src="../images/FB_IMG_1755495890325.jpg"
+            alt=""
+          />
+          <a
+            href="https://www.facebook.com/globalpinoytravel/about_profile_transparency"
+          >
+            Global Pinoy Travel and Tours</a
+          >
+        </div>
+        <div class="icon-holder">
+          <img class="img-footer" src="../images/ArdevazSign.jpg" alt="" />
+          <a href="https://manuel-saavedra-jr.vercel.app/"
+            >Developed & Maintain By ArdevazSign</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

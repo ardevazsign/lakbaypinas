@@ -13,21 +13,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <!-- Contact section tool -->
 
-    <!-- <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: 'NRut7juPdXg5K47KU',
-        });
-      })();
-    </script>
-
-    <script src="./js/script01.js"></script> -->
+    <!-- login / Register -->
+    <script type="module" src="js/contact.js"></script>
+    <script type="module" src="js/login.js"></script>
+    <script type="module" src="js/register.js"></script>
+    <script type="module" src="js/book.js"></script>
+    <script type="module" src="js/bookPackage.js"></script>
+    <script type="module" src="js/stars.js"></script>
   </head>
   <body>
     <header>
@@ -37,7 +30,7 @@
           <img class="main-logo-pic" src="./images/lakbayPinas.jpg" alt="" />
         </div>
         <div class="inner-holder">
-          <a class="logo" href="">Lakbay Pinas</a>
+          <a class="logo" href="admin/admin-login.html">Lakbay Pinas</a>
           <h4 class="logo-label">Travel & Tours</h4>
         </div>
       </div>
@@ -53,7 +46,7 @@
 
       <div class="icons">
         <i class="fas fa-search" id="search-btn"></i>
-        <i class="fas fa-user" id="login-btn"></i>
+        <i class="fas fa-user open-btnLogin" id="openModalLogin"></i>
       </div>
 
       <form action="" class="search-bar-container">
@@ -63,28 +56,76 @@
     </header>
     <!-- Header section end here -->
     <!-- Login form container -->
-    <div class="login-form-container">
+    <!-- Login/Register Modal -->
+    <div class="login-form-container" id="authModal">
       <i class="fas fa-times" id="form-close"></i>
-      <form action="">
-        <h3>Login</h3>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="form-login active">
+        <h3 class="loginTitle">Login</h3>
+
+        <label for="loginEmail">Email</label>
         <input
           type="email"
-          class="box"
-          placeholder="Enter your email here...."
+          id="loginEmail"
+          class="inputbox"
+          placeholder="Email..."
+          required
         />
+
+        <label for="loginPassword">Password</label>
         <input
           type="password"
-          class="box"
-          placeholder="Enter your email here...."
+          id="loginPassword"
+          class="inputbox"
+          placeholder="Password..."
+          required
         />
-        <input type="submit" value="login now" class="btn" />
-        <input type="checkbox" id="remember" />
-        <label for="remember">Remebeer me</label>
-        <p>forgot password?<a href="">Click here</a></p>
-        <p>Don't have an account?<a href="">register now</a></p>
+
+        <button type="submit" class="btnLogin" id="loginSubmit">
+          Login Now
+        </button>
+
+        <p class="loginPara">
+          Don't have an account?
+          <span class="switch-form" data-target="registerForm">Register →</span>
+        </p>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="registerForm" class="form-login">
+        <h3 class="loginTitle">Register</h3>
+
+        <label for="registerEmail">Email</label>
+        <input
+          type="email"
+          id="registerEmail"
+          class="inputbox"
+          placeholder="Email..."
+          required
+        />
+
+        <label for="registerPassword">Password</label>
+        <input
+          type="password"
+          id="registerPassword"
+          class="inputbox"
+          placeholder="Password..."
+          required
+        />
+
+        <button type="submit" class="btnLogin" id="registerSubmit">
+          Create Account
+        </button>
+
+        <p class="loginPara">
+          Already have an account?
+          <span class="switch-form" data-target="loginForm">Login →</span>
+        </p>
       </form>
     </div>
-    <!-- --------------------- -->
+    <!-- ----- Register ----------------------------------- -->
+
     <!-- Home Section Start --->
     <section class="home" id="home">
       <div class="content">
@@ -138,9 +179,7 @@
         ></audio>
       </div>
     </section>
-
     <!-------------  ------------------------------------------- -->
-
     <!-- Home section End ----->
     <!--Book section  Start  here -->
     <section class="book" id="book">
@@ -150,9 +189,12 @@
         <span>o</span>
         <span>k</span>
         <span class="space"></span>
-        <span>n</span>
-        <span>o</span>
-        <span>w</span>
+        <span>f</span>
+        <span>l</span>
+        <span>i</span>
+        <span>g</span>
+        <span>h</span>
+        <span>t</span>
       </h1>
 
       <div class="row">
@@ -160,27 +202,135 @@
           <img class="main-image" src="images/ardevaz/header.png" alt="" />
         </div>
 
-        <form action="">
-          <div class="inputBox">
-            <h3>where to</h3>
-            <input type="text" placeholder="place name" />
+        <form id="quoteForm">
+          <div class="input-holder">
+            <div class="inputBoxes">
+              <h3>Origin</h3>
+              <input id="origin" type="text" placeholder="place" />
+            </div>
+            <div class="inputBoxes">
+              <h3>Destination</h3>
+              <input id="destination" type="text" placeholder="place" />
+            </div>
           </div>
-          <div class="inputBox">
-            <h3>how many</h3>
-            <input type="number" placeholder="number of guests" />
+          <div class="input-holder">
+            <div class="inputBox">
+              <h3 class="smallLabel">Total Passenger</h3>
+              <input
+                type="number"
+                id="totalPassenger"
+                placeholder="0"
+                disabled
+              />
+            </div>
+            <div class="inputBox">
+              <h3 class="smallLabel">Senior Citizen</h3>
+              <input
+                type="number"
+                id="seniorCitizen"
+                placeholder="count"
+                value="0"
+                oninput="calculateTotal()"
+                min="0"
+              />
+            </div>
+            <div class="inputBox">
+              <h3 class="smallLabel">PWD</h3>
+              <input
+                type="number"
+                id="pwd"
+                placeholder="count"
+                value="0"
+                oninput="calculateTotal()"
+                min="0"
+              />
+            </div>
+            <div class="inputBox">
+              <h3 class="smallLabel">Adult</h3>
+              <input
+                type="number"
+                id="adult"
+                placeholder="count"
+                value="0"
+                oninput="calculateTotal()"
+                min="0"
+              />
+            </div>
+            <div class="inputBox">
+              <h3 class="smallLabel">Children</h3>
+              <input
+                type="number"
+                id="children"
+                placeholder="count"
+                value="0"
+                oninput="calculateTotal()"
+                min="0"
+              />
+            </div>
+            <div class="inputBox">
+              <h3 class="smallLabel">Infants</h3>
+              <input
+                type="number"
+                id="infants"
+                placeholder="count"
+                value="0"
+                oninput="calculateTotal()"
+                min="0"
+              />
+            </div>
           </div>
-          <div class="inputBox">
-            <h3>arrivals</h3>
-            <input type="date" />
+          <div class="input-holder">
+            <div class="inputBoxes">
+              <h3>Departing on</h3>
+              <input id="departing" type="date" />
+            </div>
+            <div class="inputBoxes">
+              <h3>Leaving <span class="notesLabel">( if Round-trip )</span></h3>
+              <input id="leaving" type="date" />
+            </div>
           </div>
-          <div class="inputBox">
-            <h3>leaving</h3>
-            <input type="date" />
+          <div class="input-holder">
+            <div class="inputBoxes">
+              <h3>
+                Mobile Number
+                <span class="notesLabel">
+                  ( Expect a call from our representative )
+                </span>
+              </h3>
+              <input id="mobile" type="phone" />
+            </div>
+            <div class="inputBoxes">
+              <h3>Email</h3>
+              <input id="email" type="email" />
+            </div>
           </div>
-          <input type="submit" class="btn" value="book now" />
+          <input type="submit" class="btn" value="Request Quote" />
         </form>
       </div>
     </section>
+    <!-- Modal # 1 -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times</span>
+        <div class="modal-main-content">
+          <h2 class="modal-title">
+            Protection that stands with you <br />when life takes an unexpected
+            turn.
+          </h2>
+          <h2 class="modal-subTitle">Stay Ready. Stay Protected.</h2>
+          <p class="modal-para">
+            “Get your Personal Accident Insurance today and have peace of mind,
+            no matter what surprises life brings.”
+          </p>
+          <h3 class="modal-btn">
+            View Insurance
+            <a href="./pages/policy.html">Policy</a>
+          </h3>
+        </div>
+        <button id="closeBtn" class="close-btn">Close</button>
+      </div>
+    </div>
+    <!-- Modal end -->
     <!-- book section End here -->
     <!-- Packages Section Starts -->
     <section class="packages" id="packages">
@@ -196,7 +346,7 @@
       </h1>
       <div class="box-container">
         <!-- 1 -->
-        <div class="box">
+        <div class="box" data-package="package1">
           <img
             class="packages-img"
             src="./images/packages/danang4.png"
@@ -237,19 +387,24 @@
               DAY 3: BREAKFAST.FREE TIME <br />
               DAY 4: BREAKFAST.DEPARTURE <br />
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP 8,499.00 <span>PHP 9,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
         <!-- 2 -->
-        <div class="box">
+        <div class="box" data-package="package2">
           <img class="packages-img" src="images/packages/hanoi4.png" alt="" />
           <div class="card-body">
             <h3><i class="fas fa-map-marker-alt"></i>HANOI VIETNAM</h3>
@@ -277,19 +432,24 @@
               DAY 3: BREAKFAST.FREE TIME <br />
               DAY 4: BREAKFAST.DEPARTURE <br />
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP 11,899.00 <span>PHP 13,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
         <!-- 3 -->
-        <div class="box">
+        <div class="box" data-package="package3">
           <img class="packages-img" src="./images/packages/macau4.png" alt="" />
           <div class="card-body">
             <h3><i class="fas fa-map-marker-alt"></i>MACAU</h3>
@@ -328,19 +488,24 @@
               DAY 3: BREAKFAST.FREE TIME <br />
               DAY 4: BREAKFAST.DEPARTURE <br />
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP27,899.00 <span>PHP 29,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
         <!-- 4 -->
-        <div class="box hidden">
+        <div class="box hidden" data-package="package4">
           <img
             class="packages-img"
             src="images/packages/hongkong4.png"
@@ -354,19 +519,24 @@
               quam sit numquam quae mollitia distinctio consequatur fugiat
               eligendi ipsum reiciendis.
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
         <!-- 5 -->
-        <div class="box hidden">
+        <div class="box hidden" data-package="package5">
           <img
             class="packages-img"
             src="images/packages/phuketthaland4.png"
@@ -380,19 +550,24 @@
               quam sit numquam quae mollitia distinctio consequatur fugiat
               eligendi ipsum reiciendis.
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
         <!-- 6 -->
-        <div class="box hidden">
+        <div class="box hidden" data-package="package6">
           <img
             class="packages-img"
             src="images/packages/bangkokthailand3.png"
@@ -406,19 +581,24 @@
               quam sit numquam quae mollitia distinctio consequatur fugiat
               eligendi ipsum reiciendis.
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
         <!-- 7 -->
-        <div class="box hidden">
+        <div class="box hidden" data-package="package7">
           <img
             class="packages-img"
             src="images/packages/bangkokthailand3.png"
@@ -432,19 +612,24 @@
               quam sit numquam quae mollitia distinctio consequatur fugiat
               eligendi ipsum reiciendis.
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
         <!-- 8 -->
-        <div class="box hidden">
+        <div class="box hidden" data-package="package8">
           <img
             class="packages-img"
             src="images/packages/bangkokthailand3.png"
@@ -458,19 +643,24 @@
               quam sit numquam quae mollitia distinctio consequatur fugiat
               eligendi ipsum reiciendis.
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
         <!-- 9 -->
-        <div class="box hidden">
+        <div class="box hidden" data-package="package9">
           <img
             class="packages-img"
             src="images/packages/bangkokthailand3.png"
@@ -484,22 +674,59 @@
               quam sit numquam quae mollitia distinctio consequatur fugiat
               eligendi ipsum reiciendis.
             </p>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="stars-holder">
+              <div class="stars">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+              <p id="ratingText">Rating: 0%</p>
             </div>
             <div class="price">PHP 7,855.00 <span>PHP 9,544.00</span></div>
-            <a href="#" class="btn packages-btn">book now</a>
+            <button class="btn packages-btn openModal2" id="openModal2">
+              book now
+            </button>
           </div>
         </div>
+        <!-- marked only -->
       </div>
       <div class="morePackage-holder">
         <button id="btnForMore" class="btnForMore">More Package</button>
       </div>
     </section>
+
+    <!-- Modal # 2 -->
+    <div class="modal2" id="modal2">
+      <div class="modal-content-two">
+        <span class="closeModalTwo" id="closeModal2">&times;</span>
+        <h2>Book a Travel Package</h2>
+        <form id="bookingForm" class="bookingForm">
+          <label>Full Name</label>
+          <input type="text" id="fullName" name="fullname" required />
+
+          <label>Email</label>
+          <input type="email" id="emailBooker" name="email" required />
+
+          <label>Phone</label>
+          <input type="text" id="phone" name="phone" required />
+
+          <label>Travel Package</label>
+          <input type="text" id="packageName" name="packageName" required />
+
+          <label>Number of Traveler</label>
+          <input type="number" id="traveler" name="traveler" min="1" required />
+
+          <label>Travel Date</label>
+          <input type="date" id="travelDate" name="travelDate" required />
+
+          <button type="submit">Submit Booking</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal # 2 End -->
+
     <!-- Packages Section End Here -->
     <!-- Services Section stars -->
     <section class="services" id="services">
@@ -1254,23 +1481,50 @@
           <img src="images/lakbayPinas.jpg" alt="" />
         </div>
 
-        <form action="https://formspree.io/f/xovkowdb" method="POST">
+        <form id="contactForm">
           <div class="inputBox">
-            <input type="name" id="name" placeholder="name" required />
-            <input type="email" id="email" placeholder="email" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email"
+              required
+            />
           </div>
+
           <div class="inputBox">
-            <label for=""></label>
-            <input type="number" id="phone" placeholder="number" required />
-            <input type="subject" id="subject" placeholder="subject" required />
+            <input
+              type="number"
+              id="phone"
+              name="phone"
+              placeholder="number"
+              required
+            />
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="subject"
+              required
+            />
           </div>
+
           <textarea
-            placeholder="how can we helpn you?"
-            name=""
             id="message"
+            name="message"
+            placeholder="how can we help you?"
             cols="30"
             rows="10"
+            required
           ></textarea>
+
           <input type="submit" class="btn" value="send message" />
         </form>
       </div>
@@ -1341,31 +1595,8 @@
         </div>
       </div>
     </footer>
-    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
-    <!-- <script>
-      function sendEmail() {
-        Email.send({
-          Host: 'smtp.gmail.com',
-          Username: 'ardevazsign41@gmail.com',
-          Password: 'owenmygmail@42',
-          To: 'newojunior@gmail.com',
-          From: document.getElementById('email').value,
-          Subject: 'New contact Form Enquiry',
-          Body:
-            'Name: ' +
-            document.getElementById('name').value +
-            '<br> Email: ' +
-            document.getElementById('email').value +
-            '<br> Phone no: ' +
-            document.getElementById('phone').value +
-            '<br> Message: ' +
-            document.getElementById('message').value,
-        }).then((message) => alert('Message Sent Succesfully'));
-      }
-    </script> -->
-
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- <script src="js/index.js"></script> -->
   </body>
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Ratings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      .package-box {
+        width: 400px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .package-box h3 {
+        margin: 0 0 10px 0;
+      }
+
+      input[type='number'] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 8px 15px;
+        background: #008cff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Admin – Edit Star Recommendation</h1>
+    <p>Enter rating percentage for each travel package (0–100%).</p>
+
+    <div id="packageList"></div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js';
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        setDoc,
+      } from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js';
+
+      // your firebaseConfig here
+      const firebaseConfig = {
+        apiKey: 'AIzaSyB6h-jvp3vMYRX8kNllCAkur_faZODOqcs',
+        authDomain: 'lakbaypinas-ec16f.firebaseapp.com',
+        projectId: 'lakbaypinas-ec16f',
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const packageList = document.getElementById('packageList');
+
+      // Create 9 package editors
+      for (let i = 1; i <= 9; i++) {
+        packageList.innerHTML += `
+            <div class="package-box">
+              <h3>Package${i}</h3>
+              <label>Percentage (0-100)</label>
+              <input type="number" id="pkg${i}" min="0" max="100" />
+              <button onclick="savePackage(${i})">Save</button>
+              <p id="msg${i}" style="color:green; display:none;">Saved!</p>
+            </div>
+          `;
+      }
+
+      // Load existing percentage values
+      async function loadData() {
+        for (let i = 1; i <= 9; i++) {
+          const docRef = doc(db, 'ratings', `package${i}`);
+          const snap = await getDoc(docRef);
+
+          if (snap.exists()) {
+            document.getElementById(`pkg${i}`).value = snap.data().percentage;
+          }
+        }
+      }
+
+      loadData();
+
+      // Save individual package percentage
+      window.savePackage = async function (num) {
+        const value = parseInt(document.getElementById(`pkg${num}`).value);
+
+        if (value < 0 || value > 100) {
+          alert('Percentage must be 0–100');
+          return;
+        }
+
+        await setDoc(doc(db, 'ratings', `package${num}`), {
+          percentage: value,
+        });
+
+        const msg = document.getElementById(`msg${num}`);
+        msg.style.display = 'block';
+        setTimeout(() => (msg.style.display = 'none'), 1200);
+      };
+    </script>
+  </body>
+</html>
