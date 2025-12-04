@@ -251,8 +251,8 @@ moreGallery.addEventListener('click', () => {
   hiddenBox.forEach((card) => {
     card.classList.toggle('hide-gallery');
   });
-  const isExpanding = moreGallery.textContent === 'More Package';
-  moreGallery.textContent = isExpanding ? 'Less Package' : 'More Package';
+  const isExpanding = moreGallery.textContent === 'More Gallery';
+  moreGallery.textContent = isExpanding ? 'Less Gallery' : 'More Gallery';
 
   // If collapsing (Less Video), scroll to top of the section
   if (!isExpanding) {

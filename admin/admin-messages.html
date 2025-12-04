@@ -17,18 +17,103 @@
       #unreadCount {
         font-weight: bold;
       }
+      .titleMessage {
+        font-size: 28px;
+        font-size: 600;
+      }
+      input[type='text'] {
+        font-size: 24px;
+        padding: 2px 0 2px 6px;
+        margin-bottom: 10px;
+      }
       .message-card {
-        background: #fff;
+        background: rgb(169, 238, 215);
         padding: 15px;
         border-radius: 10px;
         margin-bottom: 10px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border: 3px solid transparent;
+        cursor: pointer;
+      }
+      .message-card:hover {
+        border: 3px solid whitesmoke;
       }
       .message-card.read {
         opacity: 0.6;
       }
       button {
+        cursor: pointer;
+        background-color: aqua;
+        font-size: 16px;
+        border-radius: 4px;
         margin-right: 10px;
+        border: 1px solid white;
+        padding: 6px 10px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+      }
+      button:hover {
+        background-color: gray;
+        color: white;
+      }
+      p {
+        font-size: 24px;
+      }
+      /* ---- book css --------------------------------------- */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      th {
+        background: #0a63e8;
+        color: white;
+      }
+      #loading {
+        padding: 20px;
+        font-size: 18px;
+        color: #555;
+      }
+      .footer-container {
+        margin-top: 50px;
+        background-color: #0a63e8;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 50px;
+      }
+      .footer-rights {
+        color: white;
+      }
+      .footer-logo {
+        color: white;
+      }
+      .footer-dev {
+        color: white;
+      }
+      /* -------- For Star -------------------------------- */
+      .star-rating-container {
+        max-width: 400px;
+        padding: 20px;
+      }
+
+      .admin-item {
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      input {
+        width: 80px;
       }
     </style>
     <script type="module" src="../js/admin-messages.js"></script>
@@ -36,12 +121,153 @@
   </head>
   <body>
     <div class="header">
-      <h1>Admin - Contact Messages</h1>
+      <h1 class="titleMessage">📦 Admin - Contact Messages</h1>
       <h3>Unread Messages: <span id="unreadCount">0</span></h3>
     </div>
 
     <input type="text" id="searchInput" placeholder="Search messages..." />
 
     <div id="messagesContainer">Loading messages...</div>
+    <!-- --------------------------------------------------------admin book section  -->
+    <section class="admin-book">
+      <div class="book-admin-container">
+        <h2>📦 Quotation Requests</h2>
+
+        <table id="requestsTable">
+          <thead>
+            <tr>
+              <th>Origin</th>
+              <th>Destination</th>
+              <th>Senior</th>
+              <th>PWD</th>
+              <th>Adult</th>
+              <th>Children</th>
+              <th>Infants</th>
+              <th>Departing</th>
+              <th>Leaving</th>
+              <th>Mobile</th>
+              <th>Email</th>
+              <th>Date Submitted</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="usersList">
+      <div class="userList-container">
+        <h2>📦 Registered Users</h2>
+
+        <table border="1" cellpadding="8">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>User ID</th>
+              <th>Date Created</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+    <!-- ----------------------------------------------------------------------------------------------------- -->
+    <section class="star-rating">
+      <div class="star-rating-container">
+        <hr />
+        <h2>📦 Admin Rating Control</h2>
+
+        <div class="admin-container">
+          <div class="admin-item">
+            <label>Package A:</label>
+            <input type="number" id="rateA" min="0" max="100" />
+          </div>
+
+          <div class="admin-item">
+            <label>Package B:</label>
+            <input type="number" id="rateB" min="0" max="100" />
+          </div>
+
+          <div class="admin-item">
+            <label>Package C:</label>
+            <input type="number" id="rateC" min="0" max="100" />
+          </div>
+
+          <div class="admin-item">
+            <label>Package D:</label>
+            <input type="number" id="rateD" min="0" max="100" />
+          </div>
+
+          <div class="admin-item">
+            <label>Package E:</label>
+            <input type="number" id="rateE" min="0" max="100" />
+          </div>
+
+          <div class="admin-item">
+            <label>Package F:</label>
+            <input type="number" id="rateF" min="0" max="100" />
+          </div>
+
+          <div class="admin-item">
+            <label>Package G:</label>
+            <input type="number" id="rateG" min="0" max="100" />
+          </div>
+
+          <div class="admin-item">
+            <label>Package H:</label>
+            <input type="number" id="rateH" min="0" max="100" />
+          </div>
+
+          <div class="admin-item">
+            <label>Package I:</label>
+            <input type="number" id="rateI" min="0" max="100" />
+          </div>
+
+          <button onclick="saveRatings()">Save Ratings</button>
+          <hr />
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------------------------------------- -->
+    <section class="booked-package">
+      <div class="booked-package-container">
+        <h2>📦 Travel Package Bookings</h2>
+
+        <div id="loading">Loading bookings...</div>
+
+        <table id="bookingTable" style="display: none">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Package</th>
+              <th>Travel Date</th>
+              <th>Travelers</th>
+              <th>Submitted</th>
+            </tr>
+          </thead>
+          <tbody id="bookingData"></tbody>
+        </table>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <h2 class="footer-logo">Lakbay Pinas Admin Panel</h2>
+        <p class="footer-rights">
+          &copy; <span id="year"></span> Lakbay Pinas Travel And Tours. All
+          rights reserved.
+        </p>
+        <h3 class="footer-dev">ArdevazSign@2025</h3>
+      </div>
+    </footer>
+    <script>
+      // Get current year and insert into the span
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="../js/stars.js"></script>
+    <script type="module" src="../js/admin-book.js"></script>
+    <script type="module" src="../js/admin-bookPackage.js"></script>
+    <script type="module" src="../js/admin-users.js"></script>
   </body>
 </html>

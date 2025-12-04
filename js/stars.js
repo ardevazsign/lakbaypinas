@@ -1,42 +1,75 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js';
-import {
-  getFirestore,
-  doc,
-  getDoc,
-} from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js';
+function saveRatings() {
+  const ratings = {
+    A: rateA.value,
+    B: rateB.value,
+    C: rateC.value,
+    D: rateD.value,
+    E: rateE.value,
+    F: rateF.value,
+    G: rateG.value,
+    H: rateH.value,
+    I: rateI.value,
+  };
 
-// Firebase config
-const firebaseConfig = {
-  apiKey: 'AIzaSyB6h-jvp3vMYRX8kNllCAkur_faZODOqcs',
-  authDomain: 'lakbaypinas-ec16f.firebaseapp.com',
-  projectId: 'lakbaypinas-ec16f',
+  localStorage.setItem('packageRatings', JSON.stringify(ratings));
+  alert('Ratings updated successfully!');
+}
+
+// Load existing data to inputs
+window.onload = () => {
+  const saved = JSON.parse(localStorage.getItem('packageRatings'));
+  if (!saved) return;
+
+  rateA.value = saved.A;
+  rateB.value = saved.B;
+  rateC.value = saved.C;
+  rateD.value = saved.D;
+  rateE.value = saved.E;
+  rateF.value = saved.F;
+  rateG.value = saved.G;
+  rateH.value = saved.H;
+  rateI.value = saved.I;
 };
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
-// Select all package cards
-const packageCards = document.querySelectorAll('.box');
+// import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js';
+// import {
+//   getFirestore,
+//   doc,
+//   getDoc,
+// } from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js';
 
-packageCards.forEach(async (card) => {
-  const packageId = card.dataset.package; // e.g., "package9"
-  const stars = card.querySelectorAll('.star');
-  const ratingText = card.querySelector('.ratingText');
+// // Firebase config
+// const firebaseConfig = {
+//   apiKey: 'AIzaSyB6h-jvp3vMYRX8kNllCAkur_faZODOqcs',
+//   authDomain: 'lakbaypinas-ec16f.firebaseapp.com',
+//   projectId: 'lakbaypinas-ec16f',
+// };
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
 
-  const snap = await getDoc(doc(db, 'ratings', packageId));
-  if (!snap.exists()) return;
+// // Select all package cards
+// const packageCards = document.querySelectorAll('.box');
 
-  const percent = snap.data().percentage;
-  const starCount = Math.round(percent / 20); // 0-5 stars
+// packageCards.forEach(async (card) => {
+//   const packageId = card.dataset.package; // e.g., "package9"
+//   const stars = card.querySelectorAll('.star');
+//   const ratingText = card.querySelector('.ratingText');
 
-  // Fill stars
-  stars.forEach((star, index) => {
-    if (index < starCount) {
-      star.classList.add('filled');
-    } else {
-      star.classList.remove('filled');
-    }
-  });
+//   const snap = await getDoc(doc(db, 'ratings', packageId));
+//   if (!snap.exists()) return;
 
-  // Update text
-  ratingText.textContent = `Rating: ${percent}%`;
-});
+//   const percent = snap.data().percentage;
+//   const starCount = Math.round(percent / 20); // 0-5 stars
+
+//   // Fill stars
+//   stars.forEach((star, index) => {
+//     if (index < starCount) {
+//       star.classList.add('filled');
+//     } else {
+//       star.classList.remove('filled');
+//     }
+//   });
+
+//   // Update text
+//   ratingText.textContent = `Rating: ${percent}%`;
+// });
