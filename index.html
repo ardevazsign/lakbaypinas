@@ -212,11 +212,11 @@
           <div class="input-holder">
             <div class="inputBoxes">
               <h3>Origin</h3>
-              <input id="origin" type="text" placeholder="place" />
+              <input id="origin" type="text" placeholder="place" required />
             </div>
             <div class="inputBoxes">
               <h3>Destination</h3>
-              <input id="destination" type="text" placeholder="place" />
+              <input id="destination" type="text" placeholder="place" required />
             </div>
           </div>
           <div class="input-holder">
@@ -227,6 +227,7 @@
                 id="totalPassenger"
                 placeholder="0"
                 disabled
+           
               />
             </div>
             <div class="inputBox">
@@ -238,6 +239,7 @@
                 value="0"
                 oninput="calculateTotal()"
                 min="0"
+                required
               />
             </div>
             <div class="inputBox">
@@ -249,6 +251,7 @@
                 value="0"
                 oninput="calculateTotal()"
                 min="0"
+                required
               />
             </div>
             <div class="inputBox">
@@ -260,6 +263,7 @@
                 value="0"
                 oninput="calculateTotal()"
                 min="0"
+                required
               />
             </div>
             <div class="inputBox">
@@ -271,6 +275,7 @@
                 value="0"
                 oninput="calculateTotal()"
                 min="0"
+                required
               />
             </div>
             <div class="inputBox">
@@ -282,6 +287,7 @@
                 value="0"
                 oninput="calculateTotal()"
                 min="0"
+                required
               />
             </div>
           </div>
@@ -303,7 +309,7 @@
                   ( Expect a call from our representative )
                 </span>
               </h3>
-              <input id="mobile" type="phone" />
+              <input id="mobile" type="tel" />
             </div>
             <div class="inputBoxes">
               <h3>Email</h3>
@@ -961,31 +967,37 @@
         <span class="closeModalTwo" id="closeModal2">&times;</span>
         <h2 class="bookPackageTitle">Book a Travel Package</h2>
         <form id="bookingForm" class="bookingForm">
-          <div class="labelInput-container">
-          <label>Full Name</label>
-          <input type="text" id="fullName" name="fullname" required />
-          </div>
-            <div class="labelInput-container">
-          <label>Email</label>
-          <input type="email" id="emailBooker" name="email" required />
-          </div>
-           <div class="labelInput-container">
-          <label>Phone</label>
-          <input type="text" id="phone" name="phone" required />
-          </div>
-            <div class="labelInput-container">
-          <label>Travel Package</label>
+         
+          <label  class="textLabel" >Full Name </label>
+          <input class="bookingInput" type="text" id="fullName" name="fullname" placeholder="Name" required />
+         
+       
+           
+          <label  class="textLabel" >Email </label>
+          <input  class="bookingInput" type="email" id="emailBooker" name="email" placeholder="Address" required />
+         
+         
+          
+          <label  class="textLabel" >Phone </label>
+          <input  class="bookingInput" type="text" id="phone" name="phone" placeholder="Number" required />
+         
+         
+           
+          <label  class="textLabel" >Travel Package  </label>
+         
           <input
+           class="bookingInput"
             type="text"
             id="packageName"
             name="packageName"
             placeholder="Place to visit"
             required
           />
-          </div>
-           <div class="labelInput-container">
-          <label>Number of Traveler</label>
+        
+          
+          <label  class="textLabel" >Number of Traveler  </label>
           <input
+           class="bookingInput"
             type="number"
             id="traveler"
             name="traveler"
@@ -993,16 +1005,23 @@
             placeholder="Head count"
             required
           />
+        
+         
+           
+          <label class="textLabel">Travel Date  </label>
+          <input  class="bookingInput" type="date" id="travelDate" name="travelDate" required />
+        
+          
+        
+          <div class="bookPackageBtnHolder">
+          <button type="submit" class="btn">Submit for Booking</button>
           </div>
-           <div class="labelInput-container">
-          <label>Travel Date</label>
-          <input type="date" id="travelDate" name="travelDate" required />
-          </div>
-
-          <button type="submit" class="btn">Submit Booking</button>
+         
+         
         </form>
       </div>
-    </div>
+      </div>
+    
     <!-- Modal # 2 End -->
     <!-- -------------------------------------------------------------------------------------------------------------------- -->
     <!-- <div class="modal2" id="modal2">

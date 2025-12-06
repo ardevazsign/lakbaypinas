@@ -27,11 +27,12 @@
         margin-bottom: 10px;
       }
       .message-card {
+        width: 600px;
         background: rgb(169, 238, 215);
         padding: 15px;
         border-radius: 10px;
         margin-bottom: 10px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         border: 3px solid transparent;
         cursor: pointer;
       }
@@ -93,12 +94,15 @@
       }
       .footer-rights {
         color: white;
+        text-align: center;
       }
       .footer-logo {
         color: white;
+        text-align: center;
       }
       .footer-dev {
         color: white;
+        text-align: center;
       }
       /* -------- For Star -------------------------------- */
       .star-rating-container {
@@ -114,6 +118,14 @@
 
       input {
         width: 80px;
+      }
+      @media (max-width: 450px) {
+        .message-card {
+          width: 100%;
+        }
+        .footer-container {
+          flex-direction: column;
+        }
       }
     </style>
     <script type="module" src="../js/admin-messages.js"></script>
